@@ -1,0 +1,1 @@
+./bin/vegastrike-engine --debug 3 -d./ physics.mission

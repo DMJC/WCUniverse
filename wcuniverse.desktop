@@ -1,0 +1,22 @@
+[Desktop Entry]
+Categories=Game;Simulation;
+Comment[en_US]=3D OpenGL spaceflight simulator
+Comment=3D OpenGL spaceflight simulator
+Comment[cs]=Hraj 3D vesmírnou simulaci
+Comment[es]=Simulador de vuelo espacial 3D/OpenGL
+GenericName[en_US]=wcuniverse
+GenericName=wcuniverse
+Exec=vs
+Icon=wcuniverse.png
+MimeType=
+Name[en_US]=Wing Commander: Universe
+Name=Wing Commander: Universe
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=
