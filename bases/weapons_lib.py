@@ -1,3 +1,4 @@
+import functools
 import Base
 import VS
 import PlayerShip
@@ -2000,7 +2001,7 @@ class RepairBayComputerGeneric:
 						self.sell[repair_index][1] = 1.0
 						self.setstatus(True, "ITEM REPAIRED")
 					else:
-						self.setstatus(False, "ERROR: Cannot repair %s" %(item_name.upper()))
+						self.setstatus(False, "ERROR: Cannot repair %s Upgrade" %(item_name.upper()))
 				elif type == "missile" or type == "torpedo":
 					# deduct repair price
 					player.addCredits(-1 * price)
@@ -2419,7 +2420,7 @@ class RepairBayComputer(RepairBayComputerGeneric):
 # disable mount selection for missiles - too cumbersome
 #						elif len(slots) == 1:
 						else:
-							slots.sort(sort_missiles)
+							slots.sort(key=functools.cmp_to_key(sort_missiles))
 							mount_num = slots[0]
 							self.buy_selected_mount(item_name, type, mount_num)
 #						else:

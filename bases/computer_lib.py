@@ -229,24 +229,32 @@ class QuineComputer:
                 else:
                     VS.loadGame(game)
         elif button_index == "btn_save":
+            # With nothing selected, SAVE makes a new savegame, like picking
+            # the "New Game" entry at the top of the list.
+            selection = self.picker_screen.selection
+            if selection is not None and selection < len(self.picker_screen.items):
+                selected = self.picker_screen.items[selection]
+            else:
+                selected = None
+            new_save = selected is None or selected.data is NewSaveGame
             if self.mode != button_index:
                 self.picker_screen.items = [GUI.GUISimpleListPicker.listitem("New Game",NewSaveGame)]+savelist()
                 self.picker_screen.show()
                 self.txt_screen.hide()
-            elif self.picker_screen.visible and self.picker_screen.items[self.picker_screen.selection].data is not NewSaveGame:
+            elif self.picker_screen.visible and not new_save:
                 self.picker_screen.hide()
                 self.txt_screen.setText(
                         "\n"*7+
                         "Are you sure you want to overwrite the savegame?\n(%s)"%
-                                self.picker_screen.items[self.picker_screen.selection]
+                                selected
                         +"\n"*3
                         +"Press SAVE again to do it." )
                 self.txt_screen.show()
-            elif self.picker_screen.selection is not None:
-                if self.picker_screen.items[self.picker_screen.selection].data is NewSaveGame:
+            else:
+                if new_save:
                     VS.saveGame(makeNewSaveName())
                 else:
-                    VS.saveGame(self.picker_screen.items[self.picker_screen.selection].data)
+                    VS.saveGame(selected.data)
                 self.picker_screen.items = [GUI.GUISimpleListPicker.listitem("New Game",NewSaveGame)]+savelist()
                 self.picker_screen.show()
                 self.txt_screen.hide()

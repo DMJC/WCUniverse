@@ -1,0 +1,36 @@
+{
+    "gain": 80,
+    "effects": {
+        "stick_feel":   { "type": "damper",   "strength": 0.15, "length_ms": 0 },
+        "gun_fire":     { "type": "square",   "strength": 0.35, "length_ms": 60,  "period_ms": 30, "fade_ms": 30,  "min_interval_ms": 60 },
+        "missile_fire": { "type": "sine",     "strength": 0.55, "length_ms": 300, "period_ms": 60, "fade_ms": 200, "min_interval_ms": 200 },
+        "beam":         { "type": "square",   "strength": 0.30, "length_ms": 0,   "period_ms": 200 },
+        "afterburner":  { "type": "sine",     "strength": 0.25, "length_ms": 0,   "period_ms": 40, "attack_ms": 400 },
+        "shield_hit":   { "type": "constant", "strength": 0.40, "length_ms": 120, "fade_ms": 80,  "min_interval_ms": 80 },
+        "armor_hit":    { "type": "constant", "strength": 0.65, "length_ms": 180, "fade_ms": 100, "min_interval_ms": 80 },
+        "hull_hit":     { "type": "constant", "strength": 0.90, "length_ms": 250, "fade_ms": 120, "min_interval_ms": 80 }
+    },
+    "weapons": {
+        "Laser":          { "type": "square",        "strength": 0.25, "length_ms": 50,  "period_ms": 25, "fade_ms": 25 },
+        "CapLaser":       { "type": "square",        "strength": 0.30, "length_ms": 55,  "period_ms": 25, "fade_ms": 25 },
+        "MassDriver":     { "type": "constant",      "strength": 0.45, "length_ms": 70,  "fade_ms": 50 },
+        "CapMassDriver":  { "type": "constant",      "strength": 0.50, "length_ms": 75,  "fade_ms": 50 },
+        "Meson":          { "type": "sine",          "strength": 0.30, "length_ms": 60,  "period_ms": 20, "fade_ms": 30 },
+        "Particle":       { "type": "triangle",      "strength": 0.45, "length_ms": 90,  "period_ms": 40, "fade_ms": 50 },
+        "Neutron":        { "type": "square",        "strength": 0.55, "length_ms": 110, "period_ms": 55, "fade_ms": 60 },
+        "Tachyon":        { "type": "sawtooth_down", "strength": 0.40, "length_ms": 70,  "period_ms": 25, "fade_ms": 30 },
+        "CapTachyon":     { "type": "sawtooth_down", "strength": 0.45, "length_ms": 75,  "period_ms": 25, "fade_ms": 30 },
+        "Ion":            { "type": "sine",          "strength": 0.50, "length_ms": 120, "period_ms": 70, "fade_ms": 70 },
+        "Fusion":         { "type": "sawtooth_up",   "strength": 0.60, "length_ms": 120, "period_ms": 45, "fade_ms": 70 },
+        "Plasma":         { "type": "square",        "strength": 0.70, "length_ms": 150, "period_ms": 60, "fade_ms": 90 },
+        "Steltek":        { "type": "triangle",      "strength": 0.65, "length_ms": 130, "period_ms": 30, "fade_ms": 80 },
+        "MassSteltek":    { "type": "triangle",      "strength": 0.55, "length_ms": 120, "period_ms": 30, "fade_ms": 70 },
+        "DroneSteltek":   { "type": "triangle",      "strength": 0.40, "length_ms": 100, "period_ms": 30, "fade_ms": 60 },
+        "BoostedSteltek": { "type": "triangle",      "strength": 0.80, "length_ms": 150, "period_ms": 30, "fade_ms": 90 },
+
+        "ProtonTorpedo":  { "type": "constant",      "strength": 0.95, "length_ms": 450, "fade_ms": 300, "min_interval_ms": 300 },
+
+        "Tractor":        { "type": "sine",          "strength": 0.25, "period_ms": 400 },
+        "Repulsor":       { "type": "square",        "strength": 0.35, "period_ms": 150 }
+    }
+}

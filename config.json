@@ -1,0 +1,2002 @@
+{
+    "preset": {
+        "video": "GeForce3",
+        "resolution": "2560x1440",
+        "sound": "audio_on",
+        "bases": "big_bases",
+        "computer": "P1000MHz",
+        "color": "full_32",
+        "difficulty": "medium",
+        "optimized": "displaylist",
+        "font": "fancy_font",
+        "per_pixel_lighting": "nolight"
+    },
+    "input": {
+        "mouse_preset": "glide_mouse",
+        "joystick_preset": "joy_normal",
+        "joystick": {
+            "deadband": 0.05,
+            "debug_digital_hatswitch": false,
+            "ff_device": 0,
+            "force_feedback": true,
+            "force_use_of_joystick": false,
+            "mouse_cursor": true,
+            "mouse_deadband": 0,
+            "mouse_exponent": 1.5,
+            "mouse_sensitivity": 40,
+            "reverse_mouse_spr": false,
+            "warp_mouse": false,
+            "warp_mouse_zone": 100
+        },
+        "keyboard": {
+            "enable_unicode": true
+        },
+        "device": "joystick"
+    },
+    "ai": {
+        "afterburn_to_no_enemies": false,
+        "ai_cheat_dot": 0.993,
+        "allow_civil_war": false,
+        "allow_nonplayer_faction_change": false,
+        "auto_dock": false,
+        "capped_faction_rating": true,
+        "contraband_initiate_time": 1500,
+        "contraband_madness": 200,
+        "contraband_update_time": 5,
+        "debug_level": 0,
+        "dock_on_load": true,
+        "dock_to_area": false,
+        "faction_contraband_relation_adjust": -0.01,
+        "firing": {
+            "aggressivity": 1.3,
+            "in_weapon_range": 1,
+            "maximum_firing_angle": {
+                "maxagg": 18,
+                "minagg": 5
+            },
+            "missile_probability": 0.04,
+            "reaction_time": 0.08,
+            "turret_missile_probability": 0.01
+        },
+        "friend_factor": 0.05,
+        "hostile_lurk": false,
+        "how_far_to_stop_navigating": 1,
+        "kill_factor": 0.15,
+        "loop_around_destination_distance": 20,
+        "loop_around_destination_lateral": 4,
+        "loop_around_destination_vertical": 4,
+        "loop_around_distance": 1,
+        "max_allowable_travel_time": 300,
+        "max_faction_contraband_relation": -0.05,
+        "max_player_attackers": 2,
+        "min_time_to_auto": 20,
+        "no_turret_ai": true,
+        "only_upgrade_speed_reference": true,
+        "percentage_speed_change_to_stop_search": 1,
+        "resistance_to_side_force_percent": 0.8,
+        "resistance_to_side_movement": true,
+        "resistance_to_side_movement_percent": 0.9,
+        "slow_diplomacy_for_enemies": 0.08,
+        "start_docked_to": "mining_base",
+        "targeting": {
+            "min_null_time_to_switch_targets": 0,
+            "min_time_to_switch_targets": 1,
+            "time_until_switch": 0
+        },
+        "too_close_for_warp_tactic": 2000,
+        "turn_cheat": false,
+        "use_afterburner": false,
+        "warp_to_enemies": false,
+        "warp_to_no_enemies": false,
+        "warp_to_wingmen": true
+    },
+    "audio": {
+        "afterburner_gain": 2,
+        "ai_sound": true,
+        "battle_playlist": "battle.m3u",
+        "buzzing_distance": 10,
+        "buzzing_needs_afterburner": false,
+        "buzzing_time": 5,
+        "cross_fade_music": false,
+        "doppler": false,
+        "doppler_scale": 0.1,
+        "frequency": 44100,
+        "loading_sound": "../music/silence.ogg",
+        "loss_relationship": -120,
+        "music": true,
+        "music_layers": 1,
+        "music_volume": 0.6,
+        "news_song": "../music/news1.ogg",
+        "panic_playlist": "panic.m3u",
+        "peace_playlist": "peace.m3u",
+        "positional": true,
+        "shuffle_songs": false,
+        "sound": true,
+        "sound_gain": 0.3,
+        "thread_time": 1,
+        "unit_audio": {
+            "afterburner": "buzzing.wav",
+            "armor": "armor.wav",
+            "cloak": "cloak.wav",
+            "explode": "explosion.wav",
+            "hull": "armor.wav",
+            "jump_arrive": "empty.wav",
+            "jump_leave": "sfx43.wav",
+            "player_afterburner": "afterburner.wav",
+            "player_armor_hit": "bigarmor.wav",
+            "player_hull_hit": "bigarmor.wav",
+            "player_tractor_cargo": "tractor_onboard.wav",
+            "shield": "shieldhit.wav"
+        },
+        "volume": 40,
+        "weapon_gain": 0.5
+    },
+    "cargo": {
+        "max_price_quant_adj": 5,
+        "min_cargo_price": 0,
+        "min_price_quant_adj": 1,
+        "price_quant_adj_power": 1,
+        "price_recenter_factor": 0
+    },
+    "cockpit_audio": {
+        "automatic_landing_zone": "automatic_landing_zone_female_autodock",
+        "automatic_landing_zone1": "automatic_landing_zone_autodock",
+        "automatic_landing_zone2": "automatic_landing_zone_autodock",
+        "autopilot_available": "",
+        "autopilot_disabled": "autopilot_disabled",
+        "autopilot_enabled": "autopilot",
+        "autopilot_unavailable": "",
+        "comm": "interface_target",
+        "compress_change": "compress?_burst",
+        "compress_interval": 3,
+        "compress_loop": "compress?_loop",
+        "compress_max": 3,
+        "compress_stop": "compress_end",
+        "docking_complete": "automatic_landing_zone",
+        "docking_denied": "request_denied",
+        "docking_failed": "",
+        "docking_granted": "request_granted",
+        "examine": "interface_target",
+        "jump_engaged": "jump",
+        "manifest": "interface_computer",
+        "missile_switch": "interface_computer",
+        "objective": "interface_target",
+        "overload": "overload",
+        "overload_stopped": "",
+        "repair": "interface_target",
+        "shield": "interface_computer",
+        "sounds_extension_1": "*_female.wav",
+        "sounds_extension_2": "*.wav",
+        "target": "interface_target",
+        "target_reverse": "interface_target",
+        "undocking_complete": "undocking_complete",
+        "undocking_failed": "",
+        "view": "interface_target",
+        "weapon_switch": "interface_computer"
+    },
+    "components": {
+        "fuel": {
+            "afterburner_fuel_usage": 0,
+            "no_fuel_afterburn": 0.001,
+            "no_fuel_thrust": 1,
+            "normal_fuel_usage": 0
+        }
+    },
+    "data": {
+        "ai_directory": "ai",
+        "cockpits": "cockpits",
+        "data_dir": "/home/james/Project/WCUniverse",
+        "empty_cell_check": false,
+        "master_part_list": "master_part_list.csv",
+        "shared_sounds": "sounds",
+        "shared_textures": "textures",
+        "universe_path": "universe",
+        "volume_format": "pk3"
+    },
+    "dock": {
+        "planet_dock_port_min_size": 350
+    },
+    "economics": {
+        "repair_price": 4350
+    },
+    "galaxy": {
+        "compactness_scale": 12,
+        "moon_relative_to_moon": 0.8,
+        "moon_relative_to_planet": 0.4,
+        "push_values_to_mean": false,
+        "rocky_relative_to_primary": 0.05,
+        "star_radius_scale": 1000
+    },
+    "game_start": {
+        "default_mission": "main_menu.mission",
+        "galaxy": "wcuniverse.xml"
+    },
+    "general": {
+        "delete_old_systems": true,
+        "docking_fee": 50,
+        "garbage_collect_frequency": 20,
+        "load_last_savegame": false,
+        "num_old_systems": 15,
+        "percentage_speed_change_to_fault_search": 0.9,
+        "pitch": 0,
+        "remember_savegame": false,
+        "remove_impossible_downgrades": true,
+        "roll": 0,
+        "simulation_atom": 0.06,
+        "times_to_show_help_screen": -1,
+        "write_savegame_on_exit": false,
+        "yaw": 0
+    },
+    "graphics": {
+        "anim_far_percent": 0.8,
+        "aspect": 1.3,
+        "automatic_landing_zone_warning": "com_neutral_female_01.ani",
+        "automatic_landing_zone_warning1": "com_neutral_male_01.ani",
+        "automatic_landing_zone_warning2": "com_neutral_male_02.ani",
+        "autopilot_front_bias": 1.85,
+        "autopilot_side_bias": 1.6,
+        "background": true,
+        "background_star_streak_velocity_scale": 0.001,
+        "bases": {
+            "alpha_test_cutoff": 0,
+            "blur_bases": false,
+            "include_base_name_on_dock": false,
+            "print_cargo_volume": false
+        },
+        "bitmap_alphamap": false,
+        "can_target_asteroid": false,
+        "cargo_rotation_speed": 40,
+        "chat_text": false,
+        "cockpit": true,
+        "cockpit_shake": 3,
+        "cockpit_shake_max": 20,
+        "color_depth": 32,
+        "comm_static": "com_static.ani",
+        "death_menu_script": "death_menu",
+        "death_scene_time": 6,
+        "default_boot_message": " ",
+        "disabled_cockpit_allowed": false,
+        "displaylists": true,
+        "draw_docking_boxes": false,
+        "draw_jump_target_nav_symbol": false,
+        "draw_nav_button_labels": false,
+        "draw_rendered_crosshairs": true,
+        "draw_star_body": true,
+        "draw_star_glow": true,
+        "draw_star_glow_halo": false,
+        "draw_weapons": true,
+        "eject_rotation_speed": 0,
+        "explore_for_map": true,
+        "explosion_size": 3,
+        "fog": true,
+        "fog_detail": 2,
+        "font_antialias": true,
+        "font_point": 16,
+        "force_lighting": false,
+        "fov": 60.0,
+        "full_screen": true,
+        "generic_cargo_rotation_speed": 1,
+        "glow_ambient_star_light": false,
+        "glow_diffuse_star_light": false,
+        "halo_far_draw": false,
+        "halo_offset": 0.5,
+        "halos_by_velocity": true,
+        "head_lag": 3,
+        "high_quality_font": true,
+        "high_quality_font_computer": true,
+        "high_quality_sprites": true,
+        "hud": {
+            "already_near_message": "#010101Navpoint Near#010101",
+            "armor_hull_size": 0.4,
+            "asteroids_near_message": "#010101Asteroids Near#010101",
+            "basename_colon_basename": false,
+            "box_line_thickness": 2,
+            "diamond_line_thickness": 2,
+            "diamond_rotation_speed": 0.0001,
+            "display_warp_energy_if_no_jump_drive": false,
+            "draw_all_target_boxes": false,
+            "draw_always_itts": false,
+            "draw_arrow_to_target": false,
+            "draw_damage_sprite": false,
+            "draw_line_to_itts": false,
+            "draw_line_to_target": false,
+            "draw_line_to_targets_target": false,
+            "draw_nav_grid": false,
+            "draw_significant_blips": false,
+            "draw_vdu_view_shields": false,
+            "enemy_near_message": "#010101Enemy Near#010101",
+            "invert_friendly_shields": false,
+            "invert_friendly_sprite": false,
+            "invert_target_shields": true,
+            "invert_target_sprite": true,
+            "lock_center_crosshair": true,
+            "manifest_heading": "MANIFEST\\n",
+            "max_missile_bracket_size": 2.05,
+            "message_prefix": "COMMUNICATION\\n",
+            "min_missile_bracket_size": 1.05,
+            "nav_cross_line_thickness": 2,
+            "out_of_cone_distance": true,
+            "planet_near_message": "#010101Planetary Hazard Near#010101",
+            "print_damage_percent": false,
+            "print_faction": false,
+            "print_fg_name": false,
+            "print_request_docking": false,
+            "print_ship_type": true,
+            "radar_type": "WC",
+            "rotating_bracket_size": 0.2,
+            "shield_vdu_fade": false,
+            "simple_manifest": true,
+            "starship_near_message": "#010101Starship Near#010101",
+            "switch_to_target_mode_on_key": true,
+            "top_view": true,
+            "draw_rendered_crosshairs": false
+        },
+        "in_system_jump_animation": "invisible.ani",
+        "in_system_jump_animation_size": 0,
+        "jump_gate": "warp.ani",
+        "jump_gate_size": 10.0001,
+        "light_cutoff": 0.04,
+        "light_optimal_intensity": 0.06,
+        "light_saturation": 0.95,
+        "lock_significant_target_box": false,
+        "lock_vertex_arrays": true,
+        "logo_offset": -4,
+        "logo_offset_scale": -30.8,
+        "max_cubemap_size": 65536,
+        "max_texture_dimension": 65536,
+        "mesh_far_percent": 0.8,
+        "mipmap_detail": 3,
+        "model_detail": 10,
+        "near_stars_alpha": true,
+        "near_stars_sprite_size": 0.3,
+        "near_stars_sprite_texture": "space_dust_01.ani space_dust_02.ani",
+        "num_far_stars": 1000,
+        "num_lights": 4,
+        "num_near_stars": 1400,
+        "offset_sprites_by_pos": false,
+        "optimize_vertex_arrays": false,
+        "optimize_vertex_condition": 1,
+        "pan_on_auto": true,
+        "per_pixel_lighting": false,
+        "planet_detail_level": 64,
+        "print_ecm_status": false,
+        "reflection": true,
+        "reflectivity": 0.3,
+        "resolution_x": 800,
+        "resolution_y": 600,
+        "sector_map_ortho_view": true,
+        "separate_specular_color": true,
+        "shake_reduction": 8,
+        "shake_speed": 50,
+        "shared_vertex_arrays": true,
+        "shield_texture": "shields.ani",
+        "smart_targetting_key": false,
+        "sparkle_engine_size_relative_to_ship": 0.005,
+        "splash_audio": "../music/silence.ogg",
+        "splash_screen": "splash_priv.ani",
+        "star_blend": true,
+        "star_body_radius": 0.3,
+        "star_glow_radius": 1,
+        "star_shine": "flare1.ani flare2.ani flare3.ani flare4.ani flare5.ani flare6.ani",
+        "star_spread_attenuation": 14,
+        "star_spreading": 700,
+        "star_streaks": true,
+        "stars_alpha_test_cutoff": 0.6,
+        "stars_dont_move": false,
+        "switch_cockpit_to_default_on_unit_switch": true,
+        "system_map_ortho_view": false,
+        "target_null_if_no_unit": true,
+        "texture_compression": 1,
+        "torque_star_streak_scale": 1,
+        "unit_switch_cockpit_change": true,
+        "unprintable_factions": "privateer nephilim unknown landreich border_worlds firekkan AWACS steltek upgrades riordian seelig kroiz miggs toth garrovick reismann planets neutral ",
+        "use_star_coords": false,
+        "use_wireframe": false,
+        "vbo": false,
+        "vdu_builtin_shields": true,
+        "velocity_star_streak_scale": 0.001,
+        "vista_draw_stars": true,
+        "wormhole_unit": "",
+        "zfar": 600000,
+        "znear": 1.0
+    },
+    "network": {
+        "account_server_url": "http://vegastrike.sourceforge.net/cgi-bin/accountserver.py?WCUniverse",
+        "chat_only_in_network": true,
+        "server_ip": "localhost",
+        "server_port": "6777",
+        "use_account_server": true
+    },
+    "physics": {
+        "ai_pilot_when_in_turret": false,
+        "allow_mission_abort": false,
+        "allow_special_and_normal_gun_combo": false,
+        "asteroid_difficulty": 0.03,
+        "asteroid_weapon_collision": false,
+        "auto_landing_displace_distance": 440,
+        "auto_landing_dock_distance": 340,
+        "auto_landing_enable": true,
+        "auto_landing_exclude_list": "Sanctuary_Moon planets/rock.png",
+        "auto_landing_exclude_warning_list": "derelict",
+        "auto_landing_move_distance": 340,
+        "auto_landing_warning_distance": 420,
+        "auto_pilot_planet_radius_percent": 0.6,
+        "auto_pilot_termination_distance": 1480,
+        "auto_pilot_termination_distance_no_enemies": 1480,
+        "close_enough_to_autotrack": 4,
+        "collision_inertial_time": 1.25,
+        "component_based_upgrades": true,
+        "damage_chance": 0.008,
+        "damage_player_chance": 4,
+        "debris_mass": 1e-06,
+        "debris_time": 1e-06,
+        "difficulty_based_enemy_damage": false,
+        "difficulty_based_shield_recharge": false,
+        "difficulty_speed_exponent": 0,
+        "dock_within_base_shield": true,
+        "does_missile_bounce": true,
+        "drone": "beholder",
+        "eject_cargo_speed": 0.375,
+        "eject_distance": 20,
+        "ejection": {
+            "player_auto_eject": false
+        },
+        "friendly_auto_radius": 0,
+        "game_accel": 1,
+        "game_speed": 1,
+        "game_speed_lying": true,
+        "gun_speed": 0.1,
+        "gun_speed_adjusted_game_speed": false,
+        "hardware_cursor": false,
+        "hostile_auto_radius": 10000,
+        "in_system_jump_or_timeless_auto_pilot": true,
+        "indestructible_cargo_items": "tungsten,plasteel,isometal,Artifact",
+        "inelastic_scale": 0.5,
+        "jump_disables_shields": false,
+        "launch_speed": 15,
+        "max_collide_trees": 1,
+        "max_shield_lowers_capacitance": false,
+        "min_asteroid_distance": -2500,
+        "near_autotrack_cone": 0.9,
+        "nebula_shield_recharge": 0.25,
+        "neutral_auto_radius": -16000,
+        "persistent_on_load": false,
+        "planet_ejection_stophack": 200,
+        "priorities": {
+            "force_top_priority": false
+        },
+        "refire_difficulty_scaling": 3,
+        "repair_droid_time": 80,
+        "reverse_speed_limit": 0,
+        "runtime_compactness": 3.5,
+        "shield_energy_capacitance": 1,
+        "shield_maintenance_charge": 0,
+        "slide_end": 0,
+        "slide_start": 2,
+        "smallest_subunit_to_collide": 1e-06,
+        "speeding_discharge": 0.95,
+        "sphere_collision": true,
+        "star_system_scale": 0.285,
+        "starships_as_cargo": false,
+        "steady_itts": true,
+        "system_damage_on_armor": true,
+        "teleport_autopilot": false,
+        "tractor": {
+            "percent_to_tractor": 0.8,
+            "scoop": false,
+            "scoop_angle": 0.4
+        },
+        "unit_default_autodock_radius": 0,
+        "use_max_shield_energy_usage": false,
+        "use_unit_autodock_radius": true,
+        "velocity_max": 10000000,
+        "weapon_damage_efficiency": 0.625,
+        "year_scale": 160
+    },
+    "player": {
+        "callsign": "player",
+        "password": ""
+    },
+    "splash": {
+        "auto_hide": true,
+        "loading_message": "",
+        "loading_sprite": "splash_loading.ani"
+    },
+    "warp": {
+        "in_system_jump_cost": 0,
+        "player_warp_energy_multiplier": 0,
+        "warp_energy_multiplier": 0
+    },
+    "colors": {
+        "absolute": {
+            "red": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "green": [
+                0.0,
+                1.0,
+                0.0,
+                1.0
+            ],
+            "blue": [
+                0.0,
+                0.0,
+                1.0,
+                1.0
+            ],
+            "cyan": [
+                0.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "yellow": [
+                1.0,
+                1.0,
+                0.0,
+                1.0
+            ],
+            "brown": [
+                0.6,
+                0.2,
+                0.0,
+                1.0
+            ],
+            "black": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "clear": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "white": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "grey": [
+                0.5,
+                0.5,
+                0.5,
+                1.0
+            ],
+            "light-grey": [
+                0.8,
+                0.8,
+                0.8,
+                1.0
+            ],
+            "violet": [
+                1.0,
+                0.0,
+                1.0,
+                1.0
+            ],
+            "light-blue": [
+                0.3,
+                0.6,
+                1.0,
+                1.0
+            ],
+            "pink": [
+                1.0,
+                0.47,
+                0.64,
+                1.0
+            ],
+            "dark-red": [
+                0.1,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "dark-blue": [
+                0.0,
+                0.0,
+                0.2,
+                1.0
+            ]
+        },
+        "unit": {
+            "ship_ambient": [
+                0.3,
+                0.3,
+                0.3,
+                1.0
+            ],
+            "engine": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ]
+        },
+        "terrain": {
+            "terrain_ambient": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ]
+        },
+        "default": {
+            "outer_shield_color": [
+                0.98823,
+                0.30588,
+                0.0,
+                1.0
+            ],
+            "middle_shield_color": [
+                0.98823,
+                0.70588,
+                0.0,
+                1.0
+            ],
+            "inner_shield_color": [
+                0.988235,
+                0.70588,
+                0.0,
+                1.0
+            ],
+            "enemy": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "base": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "friend": [
+                0.0,
+                0.3,
+                1.0,
+                1.0
+            ],
+            "neutral": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "missile": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "attacking_ship": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "locking_ship": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "targetting_ship": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "target": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "planet": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "star": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "nav": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "cargo": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "jump": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "docking_box": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "black_and_white": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "hud_repair_repaired": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "hud_repair_half_damaged": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "hud_repair_damaged": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "hud_repair_destroyed": [
+                0.4,
+                0.4,
+                0.4,
+                1.0
+            ],
+            "upgrade_item_destroyed": [
+                0.6,
+                0.6,
+                0.6,
+                1.0
+            ],
+            "planet_ambient": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "planet_mat_ambient": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "planet_mat_diffuse": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "planet_mat_specular": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "planet_mat_emmissive": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "space_background": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "FixerTextColor_Background": [
+                0.0,
+                0.0,
+                0.0,
+                0.5
+            ],
+            "Fixer_Text_Color_Foreground": [
+                1.0,
+                1.0,
+                0.4,
+                1.0
+            ]
+        }
+    },
+    "actions": {
+        "Cockpit::SkipMusicTrack": {
+            "keyboard": [
+                {
+                    "key": "s",
+                    "modifier": "ctrl"
+                }
+            ]
+        },
+        "CommFormUp": {
+            "keyboard": [
+                {
+                    "key": "f",
+                    "modifier": "ctrl"
+                }
+            ]
+        },
+        "CommBreakForm": {
+            "keyboard": [
+                {
+                    "key": "b",
+                    "modifier": "ctrl"
+                }
+            ]
+        },
+        "CommHelpMeOut": {
+            "keyboard": [
+                {
+                    "key": "h",
+                    "modifier": "ctrl"
+                }
+            ]
+        },
+        "CommAttackTarget": {
+            "keyboard": [
+                {
+                    "key": "a",
+                    "modifier": "ctrl"
+                }
+            ]
+        },
+        "SetShieldsTwoThird": {
+            "keyboard": [
+                {
+                    "key": "s",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "SetShieldsOneThird": {
+            "keyboard": [
+                {
+                    "key": "S",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Comm1Key": {
+            "keyboard": [
+                {
+                    "key": "1",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Comm2Key": {
+            "keyboard": [
+                {
+                    "key": "2",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Comm3Key": {
+            "keyboard": [
+                {
+                    "key": "3",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Comm4Key": {
+            "keyboard": [
+                {
+                    "key": "4",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Comm5Key": {
+            "keyboard": [
+                {
+                    "key": "5",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Comm6Key": {
+            "keyboard": [
+                {
+                    "key": "6",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Comm7Key": {
+            "keyboard": [
+                {
+                    "key": "7",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Comm8Key": {
+            "keyboard": [
+                {
+                    "key": "8",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Comm9Key": {
+            "keyboard": [
+                {
+                    "key": "9",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "SaveTarget1": {
+            "keyboard": [
+                {
+                    "key": "1",
+                    "modifier": "alt"
+                }
+            ]
+        },
+        "SaveTarget2": {
+            "keyboard": [
+                {
+                    "key": "2",
+                    "modifier": "alt"
+                }
+            ]
+        },
+        "SaveTarget3": {
+            "keyboard": [
+                {
+                    "key": "3",
+                    "modifier": "alt"
+                }
+            ]
+        },
+        "SaveTarget4": {
+            "keyboard": [
+                {
+                    "key": "4",
+                    "modifier": "alt"
+                }
+            ]
+        },
+        "SaveTarget5": {
+            "keyboard": [
+                {
+                    "key": "5",
+                    "modifier": "alt"
+                }
+            ]
+        },
+        "SaveTarget6": {
+            "keyboard": [
+                {
+                    "key": "6",
+                    "modifier": "alt"
+                }
+            ]
+        },
+        "SaveTarget7": {
+            "keyboard": [
+                {
+                    "key": "7",
+                    "modifier": "alt"
+                }
+            ]
+        },
+        "SaveTarget8": {
+            "keyboard": [
+                {
+                    "key": "8",
+                    "modifier": "alt"
+                }
+            ]
+        },
+        "SaveTarget9": {
+            "keyboard": [
+                {
+                    "key": "9",
+                    "modifier": "alt"
+                }
+            ]
+        },
+        "SaveTarget10": {
+            "keyboard": [
+                {
+                    "key": "0",
+                    "modifier": "alt"
+                }
+            ]
+        },
+        "RestoreTarget1": {
+            "keyboard": [
+                {
+                    "key": "1",
+                    "modifier": "ctrl"
+                }
+            ]
+        },
+        "RestoreTarget2": {
+            "keyboard": [
+                {
+                    "key": "2",
+                    "modifier": "ctrl"
+                }
+            ]
+        },
+        "RestoreTarget3": {
+            "keyboard": [
+                {
+                    "key": "3",
+                    "modifier": "ctrl"
+                }
+            ]
+        },
+        "RestoreTarget4": {
+            "keyboard": [
+                {
+                    "key": "4",
+                    "modifier": "ctrl"
+                }
+            ]
+        },
+        "RestoreTarget5": {
+            "keyboard": [
+                {
+                    "key": "5",
+                    "modifier": "ctrl"
+                }
+            ]
+        },
+        "RestoreTarget6": {
+            "keyboard": [
+                {
+                    "key": "6",
+                    "modifier": "ctrl"
+                }
+            ]
+        },
+        "RestoreTarget7": {
+            "keyboard": [
+                {
+                    "key": "7",
+                    "modifier": "ctrl"
+                }
+            ]
+        },
+        "RestoreTarget8": {
+            "keyboard": [
+                {
+                    "key": "8",
+                    "modifier": "ctrl"
+                }
+            ]
+        },
+        "RestoreTarget9": {
+            "keyboard": [
+                {
+                    "key": "9",
+                    "modifier": "ctrl"
+                }
+            ]
+        },
+        "RestoreTarget10": {
+            "keyboard": [
+                {
+                    "key": "0",
+                    "modifier": "ctrl"
+                }
+            ]
+        },
+        "TextMessage": {
+            "keyboard": [
+                {
+                    "key": "]",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "FireKey": {
+            "keyboard": [
+                {
+                    "key": "space",
+                    "modifier": "none"
+                }
+            ],
+            "mouse": [
+                {
+                    "button": 0,
+                    "modifier": "none"
+                }
+            ],
+            "joystick": [
+                {
+                    "joystick": 0,
+                    "button": 0
+                }
+            ]
+        },
+        "PickTargetKey": {
+            "keyboard": [
+                {
+                    "key": "y",
+                    "modifier": "none"
+                }
+            ],
+            "mouse": [
+                {
+                    "button": 4,
+                    "modifier": "none"
+                }
+            ],
+            "joystick": [
+                {
+                    "joystick": 0,
+                    "button": 4
+                }
+            ]
+        },
+        "JumpKey": {
+            "keyboard": [
+                {
+                    "key": "j",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "AutoKey": {
+            "keyboard": [
+                {
+                    "key": "A",
+                    "modifier": "none"
+                },
+                {
+                    "key": "a",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Screenshot": {
+            "keyboard": [
+                {
+                    "key": "i",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::TargetMode": {
+            "keyboard": [
+                {
+                    "key": "e",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::DamageMode": {
+            "keyboard": [
+                {
+                    "key": "r",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::CommMode": {
+            "keyboard": [
+                {
+                    "key": "c",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::ObjectiveMode": {
+            "keyboard": [
+                {
+                    "key": "o",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::ScanningMode": {
+            "keyboard": [
+                {
+                    "key": "O",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "EjectNonMissionCargoKey": {
+            "keyboard": [
+                {
+                    "key": "x",
+                    "modifier": "ctrl"
+                }
+            ]
+        },
+        "EjectCargoKey": {
+            "keyboard": [
+                {
+                    "key": "X",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "ToggleAutotracking": {
+            "keyboard": [
+                {
+                    "key": "k",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::Quit": {
+            "keyboard": [
+                {
+                    "key": "x",
+                    "modifier": "alt"
+                },
+                {
+                    "key": "esc",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "MissileKey": {
+            "keyboard": [
+                {
+                    "key": "return",
+                    "modifier": "none"
+                },
+                {
+                    "key": "keypad-enter",
+                    "modifier": "none"
+                }
+            ],
+            "mouse": [
+                {
+                    "button": 1,
+                    "modifier": "none"
+                }
+            ],
+            "joystick": [
+                {
+                    "joystick": 0,
+                    "button": 2
+                }
+            ]
+        },
+        "Cockpit::GunMode": {
+            "keyboard": [
+                {
+                    "key": "g",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::ReverseGunMode": {
+            "keyboard": [
+                {
+                    "key": "G",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Respawn": {
+            "keyboard": [
+                {
+                    "key": "R",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "TurretControl": {
+            "keyboard": [
+                {
+                    "key": "function-5",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "RequestClearenceKey": {
+            "keyboard": [
+                {
+                    "key": "0",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::MissileMode": {
+            "keyboard": [
+                {
+                    "key": "W",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::ReverseMissileMode": {
+            "keyboard": [
+                {
+                    "key": "w",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "UnitTargetKey": {
+            "keyboard": [
+                {
+                    "key": "t",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "TargetKey": {
+            "keyboard": [
+                {
+                    "key": "u",
+                    "modifier": "none"
+                }
+            ],
+            "mouse": [
+                {
+                    "button": 3,
+                    "modifier": "none"
+                }
+            ],
+            "joystick": [
+                {
+                    "joystick": 0,
+                    "button": 3
+                }
+            ]
+        },
+        "SigTargetKey": {
+            "keyboard": [
+                {
+                    "key": "n",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "SubUnitTargetKey": {
+            "keyboard": [
+                {
+                    "key": "b",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "LockTargetKey": {
+            "keyboard": [
+                {
+                    "key": "l",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "PauseKey": {
+            "keyboard": [
+                {
+                    "key": "p",
+                    "modifier": "none"
+                },
+                {
+                    "key": "pause",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "NearestTargetKey": {
+            "keyboard": [
+                {
+                    "key": "h",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "ReverseUnitTargetKey": {
+            "keyboard": [
+                {
+                    "key": "T",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "ReverseNearestTargetKey": {
+            "keyboard": [
+                {
+                    "key": "H",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "ReverseSigTargetKey": {
+            "keyboard": [
+                {
+                    "key": "N",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "ReverseTargetKey": {
+            "keyboard": [
+                {
+                    "key": "U",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "DecelKey": {
+            "keyboard": [
+                {
+                    "key": "-",
+                    "modifier": "none"
+                },
+                {
+                    "key": "keypad-minus",
+                    "modifier": "none"
+                }
+            ],
+            "mouse": [
+                {
+                    "button": 5,
+                    "modifier": "none"
+                }
+            ],
+            "joystick": [
+                {
+                    "joystick": 0,
+                    "button": 5
+                }
+            ]
+        },
+        "AccelKey": {
+            "keyboard": [
+                {
+                    "key": "+",
+                    "modifier": "none"
+                },
+                {
+                    "key": "keypad-plus",
+                    "modifier": "none"
+                },
+                {
+                    "key": "=",
+                    "modifier": "none"
+                }
+            ],
+            "mouse": [
+                {
+                    "button": 7,
+                    "modifier": "none"
+                }
+            ],
+            "joystick": [
+                {
+                    "joystick": 0,
+                    "button": 7
+                }
+            ]
+        },
+        "RollLeftKey": {
+            "keyboard": [
+                {
+                    "key": ",",
+                    "modifier": "none"
+                },
+                {
+                    "key": "keypad-divide",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "RollRightKey": {
+            "keyboard": [
+                {
+                    "key": ".",
+                    "modifier": "none"
+                },
+                {
+                    "key": "keypad-multiply",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "StopKey": {
+            "keyboard": [
+                {
+                    "key": "backspace",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "StartKey": {
+            "keyboard": [
+                {
+                    "key": "\\",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "ABKey": {
+            "keyboard": [
+                {
+                    "key": "tab",
+                    "modifier": "none"
+                }
+            ],
+            "mouse": [
+                {
+                    "button": 2,
+                    "modifier": "none"
+                }
+            ],
+            "joystick": [
+                {
+                    "joystick": 0,
+                    "button": 1
+                }
+            ]
+        },
+        "SuicideKey": {
+            "keyboard": [
+                {
+                    "key": "d",
+                    "modifier": "alt"
+                }
+            ]
+        },
+        "UpKey": {
+            "keyboard": [
+                {
+                    "key": "cursor-up",
+                    "modifier": "none"
+                },
+                {
+                    "key": "keypad-8",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "DownKey": {
+            "keyboard": [
+                {
+                    "key": "cursor-down",
+                    "modifier": "none"
+                },
+                {
+                    "key": "keypad-2",
+                    "modifier": "none"
+                },
+                {
+                    "key": "keypad-5",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "RightKey": {
+            "keyboard": [
+                {
+                    "key": "cursor-left",
+                    "modifier": "none"
+                },
+                {
+                    "key": "keypad-4",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "LeftKey": {
+            "keyboard": [
+                {
+                    "key": "cursor-right",
+                    "modifier": "none"
+                },
+                {
+                    "key": "keypad-6",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::NavScreen": {
+            "keyboard": [
+                {
+                    "key": "n",
+                    "modifier": "ctrl"
+                },
+                {
+                    "key": "M",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::Inside": {
+            "keyboard": [
+                {
+                    "key": "function-1",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::InsideLeft": {
+            "keyboard": [
+                {
+                    "key": "function-2",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::InsideRight": {
+            "keyboard": [
+                {
+                    "key": "function-3",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::InsideBack": {
+            "keyboard": [
+                {
+                    "key": "function-4",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "VolumeInc": {
+            "keyboard": [
+                {
+                    "key": ".",
+                    "modifier": "alt"
+                }
+            ]
+        },
+        "VolumeDec": {
+            "keyboard": [
+                {
+                    "key": ",",
+                    "modifier": "alt"
+                }
+            ]
+        },
+        "MusicVolumeInc": {
+            "keyboard": [
+                {
+                    "key": "greater-than",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "MusicVolumeDec": {
+            "keyboard": [
+                {
+                    "key": "less-than",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::Pan": {
+            "keyboard": [
+                {
+                    "key": "function-6",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::OutsideTarget": {
+            "keyboard": [
+                {
+                    "key": "function-7",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::PanTarget": {
+            "keyboard": [
+                {
+                    "key": "function-8",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::ZoomIn": {
+            "keyboard": [
+                {
+                    "key": "function-11",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::ZoomOut": {
+            "keyboard": [
+                {
+                    "key": "function-12",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::ManifestMode": {
+            "keyboard": [
+                {
+                    "key": "m",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::ViewMode": {
+            "keyboard": [
+                {
+                    "key": "v",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::PitchDown": {
+            "keyboard": [
+                {
+                    "key": "cursor-home",
+                    "modifier": "none"
+                },
+                {
+                    "key": "q",
+                    "modifier": "none"
+                },
+                {
+                    "key": "keypad-7",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::PitchUp": {
+            "keyboard": [
+                {
+                    "key": "cursor-end",
+                    "modifier": "none"
+                },
+                {
+                    "key": "keypad-1",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::YawLeft": {
+            "keyboard": [
+                {
+                    "key": "cursor-insert",
+                    "modifier": "none"
+                },
+                {
+                    "key": "keypad-0",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::YawRight": {
+            "keyboard": [
+                {
+                    "key": "cursor-delete",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::ScrollDown": {
+            "keyboard": [
+                {
+                    "key": "cursor-pagedown",
+                    "modifier": "none"
+                },
+                {
+                    "key": "keypad-3",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "Cockpit::ScrollUp": {
+            "keyboard": [
+                {
+                    "key": "cursor-pageup",
+                    "modifier": "none"
+                },
+                {
+                    "key": "keypad-9",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "SetVelocityRefKey": {
+            "keyboard": [
+                {
+                    "key": "function-9",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "SetVelocityNullKey": {
+            "keyboard": [
+                {
+                    "key": "function-10",
+                    "modifier": "none"
+                }
+            ]
+        },
+        "SheltonKey": {
+            "mouse": [
+                {
+                    "button": 6,
+                    "modifier": "none"
+                }
+            ],
+            "joystick": [
+                {
+                    "joystick": 0,
+                    "button": 6
+                }
+            ]
+        },
+        "WeapSelKey": {
+            "mouse": [
+                {
+                    "button": 8,
+                    "modifier": "none"
+                }
+            ],
+            "joystick": [
+                {
+                    "joystick": 0,
+                    "button": 8
+                }
+            ]
+        },
+        "MisSelKey": {
+            "mouse": [
+                {
+                    "button": 9,
+                    "modifier": "none"
+                }
+            ],
+            "joystick": [
+                {
+                    "joystick": 0,
+                    "button": 9
+                }
+            ]
+        }
+    },
+    "axes": {
+        "x": {
+            "source": "joystick",
+            "joystick": 0,
+            "axis": 0,
+            "inverse": false
+        },
+        "y": {
+            "source": "joystick",
+            "joystick": 0,
+            "axis": 1,
+            "inverse": false
+        }
+    },
+    "unmapped": {
+        "data": {
+            "UnitCSV": "units.csv",
+            "unitfactiondir": "factions",
+            "mountlocation": "mounts"
+        },
+        "graphics": {
+            "sparkegrowrate": 0.5,
+            "sparklescale": 0.5,
+            "sparklespeed": 0.1,
+            "sparkleflare": 0.3,
+            "sparklespread": 0.01,
+            "sparklefixedsize": false,
+            "sparklefade": 0.6,
+            "vdu_static": "static_vdu.ani",
+            "absolute_relation_color": true,
+            "talking_heads": true,
+            "com_static.ani": true,
+            "num_far_stars_scale": 1.5,
+            "MouseCursor": false,
+            "precache": true,
+            "asteroid_detail": 5,
+            "jump_detail": 16
+        },
+        "graphics/mesh": {
+            "testvar": -4
+        },
+        "graphics/hud": {
+            "MinMissileDiamondSize": 0.4,
+            "MaxMissileDiamondSize": 1,
+            "radarRange": 15000
+        },
+        "audio": {
+            "music_fadein": 0,
+            "music_fadeout": 10,
+            "use_external_player": true,
+            "external_player": "C:\\Program Files\\Winamp\\Winamp.exe",
+            "external_play_option": "/PLAY",
+            "external_enqueue_option": "/ADD"
+        },
+        "cockpitaudio": {
+            "missle_switch": "interface_computer"
+        },
+        "AI/Targetting": {
+            "TargetSwitchReactionTime": 0.8,
+            "TargetSwitchProbability": 0.01
+        },
+        "physics": {
+            "wc_style_physics": true,
+            "shield_energy_downpower": 0.125,
+            "shield_energy_downpower_time": 24,
+            "shield_energy_downpower_percent": 0.5,
+            "fuel_damage_prob": 0,
+            "warpenergy_damage_prob": 0,
+            "ab_damage_prob": 0.5,
+            "cargovolume_damage_prob": 0,
+            "upgradevolume_damage_prob": 0,
+            "cargo_damage_prob": 0,
+            "unit_collision_docks": true,
+            "bounding_box_collision": false,
+            "collision_damage_scale": 4,
+            "UnitTable": 1,
+            "shields_require_passive_recharge_maintenance": false,
+            "max_shield_recharge_drain": 9.259,
+            "combat_speed_boost": 100,
+            "minimum_time_between_recorded_player_collisions": 0.1,
+            "minimum_collision_velocity": 5,
+            "atmosphereheight": 10,
+            "BouncePercent": 1,
+            "autodist": 200,
+            "planet_port_size": 1.6,
+            "autotime": 4
+        },
+        "galaxy": {
+            "GasRelativeToPrimary": 0.2
+        },
+        "player": {
+            "realname": "Nickname",
+            "email": "email@where-ever.net",
+            "homepage": "http://vegastrike.sourceforge.net/"
+        },
+        "server": {
+            "difficulty": 1,
+            "saveperiod": 7200,
+            "clienttimeout": 120,
+            "logintimeout": 60,
+            "reconnectperiod": 6,
+            "missionfile": "networking.mission",
+            "galaxy": "wcuniverse.xml"
+        },
+        "network": {
+            "transport": "udp",
+            "use_webcam": false,
+            "use_portaudio": false,
+            "encryption_method": "rsa",
+            "encryption_keylength": 128,
+            "encryption_seed": "Blah blah blah",
+            "network_atom": 0.2,
+            "planet_atom": 1130,
+            "damage_atom": 5
+        }
+    }
+}

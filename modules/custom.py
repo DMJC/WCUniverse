@@ -1,7 +1,7 @@
 import VS
 import traceback
 import sys
-import imp
+#import imp
 
 procedures = {
         }
