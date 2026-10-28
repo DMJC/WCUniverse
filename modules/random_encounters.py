@@ -143,7 +143,7 @@ class random_encounters:
                 continue
             num=len(fglist)
 #            print 'Probability numbers: ',num, fg_util.MaxNumFlightgroupsInSystem(cursys)#,numsigs
-            print ('Probability numbers: ',num, fg_util.MaxNumFlightgroupsInSystem(cursys),numsigs)
+            print ('Probability numbers: ',num, fg_util.MaxNumFlightgroupsInSystem(cursys))
             avg=float(num)/float(fg_util.MaxNumFlightgroupsInSystem(cursys))#/float(numsigs)
             fortress_level=0
             if cursys in faction_ships.fortress_systems:
@@ -252,6 +252,7 @@ class random_encounters:
         if (self.cur_player>=len(self.players)):
             self.AddPlayer()
         self.cur=self.players[self.cur_player]
+        un=None
         if (self.cur.curquest<len(self.cur.quests)):
             if (self.cur.quests[self.cur.curquest].Execute()):
                 self.cur.curquest+=1

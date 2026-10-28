@@ -1,4 +1,8 @@
-<system name="New_Constantinople" background="backgrounds/plasma_galaxy" nearstars="500" stars="1000" starspread="150"  y="0" z="0" x="0">
+<system name="New_Constantinople" background="backgrounds/plasma_galaxy" skybox="false" backgroundColor="0 0.0 0.0" farStars="25000" starBrightness="3" nearstars="500" stars="1000" starspread="150"  y="0" z="0" x="0">
+<!--<system name="New_Constantinople" background="backgrounds/plasma_galaxy" skybox="false" backgroundColor="0 0.03 0.13" farStars="25000" starBrightness="3" nearstars="500" stars="1000" starspread="150"  y="0" z="0" x="0">-->
+<Backdrop file="backdrops/bg_galaxy_test.png" direction="0.4 0.3 1" size="25" rotation="20" alpha="SRCALPHA INVSRCALPHA"/>
+<Backdrop file="backdrops/black_hole1.png" direction="-0.8 -0.2 -0.5" size="15" rotation="-35" alpha="SRCALPHA INVSRCALPHA"/>
+<Backdrop file="backdrops/comet.png" direction="-0.8 -0.8 0.5" size="15" rotation="-35" alpha="SRCALPHA INVSRCALPHA"/>
 <Light>
 <ambient red="000.0" green="000.0" blue="000.0"/>
 <diffuse red="1" green="0.948683298050514" blue="1"/>

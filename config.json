@@ -1,7 +1,16 @@
 {
+    "flight_model": {
+        "mode": "classic",
+        "rotation_response": 0.08,
+        "speed_accel_scale": 1.0,
+        "allow_slide": false,
+        "slide_recovery_time": 0.5,
+        "sim_hz": 30,
+        "ai_turn_gain": 8.0
+    },
     "preset": {
         "video": "GeForce3",
-        "resolution": "2560x1440",
+        "resolution": "2560x1600",
         "sound": "audio_on",
         "bases": "big_bases",
         "computer": "P1000MHz",
@@ -20,7 +29,7 @@
             "ff_device": 0,
             "force_feedback": true,
             "force_use_of_joystick": false,
-            "mouse_cursor": true,
+            "mouse_cursor": false,
             "mouse_deadband": 0,
             "mouse_exponent": 1.5,
             "mouse_sensitivity": 40,
@@ -398,7 +407,10 @@
         "vista_draw_stars": true,
         "wormhole_unit": "",
         "zfar": 600000,
-        "znear": 1.0
+        "znear": 1.0,
+        "far_stars_sprite_texture": "star_glow.png",
+        "far_stars_sprite_size": 1.0,
+        "far_stars_size_by_brightness": true
     },
     "network": {
         "account_server_url": "http://vegastrike.sourceforge.net/cgi-bin/accountserver.py?WCUniverse",
@@ -649,14 +661,14 @@
             ],
             "enemy": [
                 1.0,
-                1.0,
-                1.0,
+                0.0,
+                0.0,
                 1.0
             ],
             "base": [
-                1.0,
-                1.0,
-                1.0,
+                0.5,
+                0.5,
+                0.5,
                 1.0
             ],
             "friend": [
@@ -666,52 +678,52 @@
                 1.0
             ],
             "neutral": [
-                1.0,
-                1.0,
-                1.0,
+                0.5,
+                0.5,
+                0.5,
                 1.0
             ],
             "missile": [
                 1.0,
                 1.0,
-                1.0,
+                0.0,
                 1.0
             ],
             "attacking_ship": [
-                1.0,
-                1.0,
+                0.0,
+                0.0,
                 1.0,
                 1.0
             ],
             "locking_ship": [
                 1.0,
-                1.0,
+                0.0,
                 1.0,
                 1.0
             ],
             "targetting_ship": [
                 1.0,
-                1.0,
-                1.0,
+                0.0,
+                0.0,
                 1.0
             ],
             "target": [
                 1.0,
-                1.0,
+                0.0,
                 1.0,
                 1.0
             ],
             "planet": [
-                1.0,
-                1.0,
-                1.0,
+                0.5,
+                0.5,
+                0.5,
                 1.0
             ],
             "star": [
-                1.0,
-                1.0,
-                1.0,
-                1.0
+                0.0,
+                0.0,
+                0.0,
+                0.0
             ],
             "nav": [
                 1.0,
@@ -720,14 +732,14 @@
                 1.0
             ],
             "cargo": [
-                1.0,
-                1.0,
-                1.0,
+                0.6,
+                0.2,
+                0.0,
                 1.0
             ],
             "jump": [
-                1.0,
-                1.0,
+                0.3,
+                0.6,
                 1.0,
                 1.0
             ],
@@ -738,27 +750,27 @@
                 1.0
             ],
             "black_and_white": [
-                1.0,
-                1.0,
-                1.0,
+                0.8,
+                0.8,
+                0.8,
                 1.0
             ],
             "hud_repair_repaired": [
+                0.0,
                 1.0,
-                1.0,
-                1.0,
+                0.0,
                 1.0
             ],
             "hud_repair_half_damaged": [
                 1.0,
                 1.0,
-                1.0,
+                0.0,
                 1.0
             ],
             "hud_repair_damaged": [
                 1.0,
-                1.0,
-                1.0,
+                0.0,
+                0.0,
                 1.0
             ],
             "hud_repair_destroyed": [
@@ -804,9 +816,9 @@
                 1.0
             ],
             "space_background": [
-                1.0,
-                1.0,
-                1.0,
+                0.0,
+                0.0,
+                0.0,
                 1.0
             ],
             "FixerTextColor_Background": [
@@ -1895,6 +1907,12 @@
             "joystick": 0,
             "axis": 1,
             "inverse": false
+        },
+        "z": {
+            "source": "joystick",
+            "joystick": 0,
+            "axis": 2,
+            "inverse": true
         }
     },
     "unmapped": {
