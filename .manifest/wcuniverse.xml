@@ -6967,48 +6967,57 @@
       <file md5="add3f2790d29dc512432e95d79f18a41" mode="0644">master_part_list.csv</file>
       <file md5="1e49004127818dc74f89ba458d458dd1" mode="0644">makeloki.sh</file>
       <file md5="1774ddcf3cf7100bb977425e256dda20" mode="0644">introduction.avi</file>
-      <file md5="43db84878afbeda5e4011af68d3a5bfc" mode="0644">factions.xml</file>
-      <file md5="244aabbe5f240858c6c03566f31790b0" mode="0644">communications/privtoretro.xml</file>
+      <file md5="9d204be70ad55a55e6554dadd6aab2dc" mode="0644">factions.xml</file>
+      <file md5="244aabbe5f240858c6c03566f31790b0" mode="0644">communications/privateertoretro.xml</file>
       <file md5="25b77849433663c199da0e79805dd8f7" mode="0644">communications/miggs.xml</file>
-      <file md5="66f7d7fc7b8056e783de02774f2abe9a" mode="0644">communications/privtomining.xml</file>
+      <file md5="66f7d7fc7b8056e783de02774f2abe9a" mode="0644">communications/privateertomining.xml</file>
       <file md5="080787e6c0095c11995e8ec1a5f7c2a6" mode="0644">communications/merchant.xml</file>
       <file md5="87de0fce6c1919a07c02ddc896a58fe9" mode="0644">communications/naval.xml</file>
-      <file md5="7665bef6a2ad083cca6f8aa7711c9ba3" mode="0644">communications/privtodetroit.xml</file>
+      <file md5="7665bef6a2ad083cca6f8aa7711c9ba3" mode="0644">communications/privateertodetroit.xml</file>
       <file md5="541ce01de162ddef72a1c2c4a79af971" mode="0644">communications/confed.xml</file>
-      <file md5="94a1ad463f08d421319d0a31b5f2a26c" mode="0644">communications/privtopirate.xml</file>
+      <file md5="94a1ad463f08d421319d0a31b5f2a26c" mode="0644">communications/privateertopirate.xml</file>
       <file md5="87de0fce6c1919a07c02ddc896a58fe9" mode="0644">communications/detroit.xml</file>
-      <file md5="002baabcdfe13bc1b7d85c84e004f904" mode="0644">communications/privtohunter.xml</file>
+      <file md5="002baabcdfe13bc1b7d85c84e004f904" mode="0644">communications/privateertohunter.xml</file>
       <file md5="87de0fce6c1919a07c02ddc896a58fe9" mode="0644">communications/steltecderelict.xml</file>
-      <file md5="b76eddbd84bf2e91a1444271dd922acd" mode="0644">communications/privtokilrathi.xml</file>
+      <file md5="b76eddbd84bf2e91a1444271dd922acd" mode="0644">communications/privateertokilrathi.xml</file>
       <file md5="87de0fce6c1919a07c02ddc896a58fe9" mode="0644">communications/mining.xml</file>
-      <file md5="dcce81e7a9b47ce613efd467c0ca2104" mode="0644">communications/privtonaval.xml</file>
-      <file md5="9cf43b001f967933f3d421b76acbbce6" mode="0644">communications/privtopriv.xml</file>
-      <file md5="31694be88d1b38e1a6299b6729385fe7" mode="0644">communications/privtopirates.xml</file>
-      <file md5="6fccc6c2a31a0e64498b4641896dda2f" mode="0644">communications/privtoagric.xml</file>
+      <file md5="dcce81e7a9b47ce613efd467c0ca2104" mode="0644">communications/privateertonaval.xml</file>
+      <file md5="9cf43b001f967933f3d421b76acbbce6" mode="0644">communications/privateertoprivateer.xml</file>
+      <file md5="31694be88d1b38e1a6299b6729385fe7" mode="0644">communications/privateertopirates.xml</file>
+      <file md5="6fccc6c2a31a0e64498b4641896dda2f" mode="0644">communications/privateertoagric.xml</file>
       <file md5="353e331635aa76d89641bfa91054948f" mode="0644">communications/seelig.xml</file>
       <file md5="14ba863a6f6d2e8547cad05e9ddbf0e8" mode="0644">communications/retro.xml</file>
       <file md5="b54e8e4fd2e3bb3ad739054b27bbf1ab" mode="0644">communications/hunter.xml</file>
       <file md5="ae9f3978834ef8270b31694545d16bf3" mode="0644">communications/reismann.xml</file>
-      <file md5="fc576cef1837eb1d51268361b83fe843" mode="0644">communications/privtomilitia.xml</file>
+      <file md5="fc576cef1837eb1d51268361b83fe843" mode="0644">communications/privateertomilitia.xml</file>
       <file md5="bcc59405ce769e90480df87698393487" mode="0644">communications/kroiz.xml</file>
       <file md5="c1430b28651740b00e1ef17677e25e14" mode="0644">communications/militia.xml</file>
       <file md5="87de0fce6c1919a07c02ddc896a58fe9" mode="0644">communications/commerce.xml</file>
-      <file md5="fafecc6ab86e41cc6039297d66485338" mode="0644">communications/privtoAWACS.xml</file>
+      <file md5="fafecc6ab86e41cc6039297d66485338" mode="0644">communications/privateertoAWACS.xml</file>
       <file md5="753ba7abea9386b328b01ebe316bcae1" mode="0644">communications/riordian.xml</file>
-      <file md5="41e44d18454c8c9bae45d08d85c69f3f" mode="0644">communications/privtomerchant.xml</file>
+      <file md5="41e44d18454c8c9bae45d08d85c69f3f" mode="0644">communications/privateertomerchant.xml</file>
       <file md5="c65d7b1f0d61118c305fd800e2be1651" mode="0644">communications/toth.xml</file>
-      <file md5="b635c369bcbf7fd35719eb27e9434043" mode="0644">communications/privtocommerce.xml</file>
+      <file md5="b635c369bcbf7fd35719eb27e9434043" mode="0644">communications/privateertocommerce.xml</file>
       <file md5="1cbea74e53bfb0d57d7edf5601dbf5d4" mode="0644">communications/garrovick.xml</file>
-      <file md5="21df9a2e337dfdc1031aa83b2795b2bf" mode="0644">communications/privtoconfed.xml</file>
+      <file md5="21df9a2e337dfdc1031aa83b2795b2bf" mode="0644">communications/privateertoconfed.xml</file>
       <file md5="87de0fce6c1919a07c02ddc896a58fe9" mode="0644">communications/refinery.xml</file>
-      <file md5="17a7626cb773f9cba60c8d41da386258" mode="0644">communications/privtosteltekderelict.xml</file>
+      <file md5="17a7626cb773f9cba60c8d41da386258" mode="0644">communications/privateertosteltekderelict.xml</file>
       <file md5="d982dc4115c96a2ee109d8623b022bec" mode="0644">communications/kilrathi.xml</file>
       <file md5="33f7662db61df32256b2e02b36067f9c" mode="0644">communications/pirates.xml</file>
-      <file md5="3b4cd21cc292e105191275705cb38083" mode="0644">communications/privtorefinery.xml</file>
+      <file md5="3b4cd21cc292e105191275705cb38083" mode="0644">communications/privateertorefinery.xml</file>
       <file md5="87de0fce6c1919a07c02ddc896a58fe9" mode="0644">communications/agric.xml</file>
       <file md5="ad414212ccf7e9d975bb609a79d33c64" mode="0644">communications/AWACS.xml</file>
       <file md5="79649328e8c4da45d9bbb1e8ea0dc434" mode="0644">communications/neutral.xml</file>
       <file md5="87de0fce6c1919a07c02ddc896a58fe9" mode="0644">communications/pirate.xml</file>
+      <file md5="fc576cef1837eb1d51268361b83fe843" mode="0644">communications/privateertolandreich.xml</file>
+      <file md5="21df9a2e337dfdc1031aa83b2795b2bf" mode="0644">communications/privateertoborder_worlds.xml</file>
+      <file md5="002baabcdfe13bc1b7d85c84e004f904" mode="0644">communications/privateertoriordian.xml</file>
+      <file md5="31694be88d1b38e1a6299b6729385fe7" mode="0644">communications/privateertoseelig.xml</file>
+      <file md5="002baabcdfe13bc1b7d85c84e004f904" mode="0644">communications/privateertokroiz.xml</file>
+      <file md5="31694be88d1b38e1a6299b6729385fe7" mode="0644">communications/privateertomiggs.xml</file>
+      <file md5="41e44d18454c8c9bae45d08d85c69f3f" mode="0644">communications/privateertototh.xml</file>
+      <file md5="002baabcdfe13bc1b7d85c84e004f904" mode="0644">communications/privateertogarrovick.xml</file>
+      <file md5="21df9a2e337dfdc1031aa83b2795b2bf" mode="0644">communications/privateertoreismann.xml</file>
       <file md5="c57a6b478fc2851747616f16cfc06da4" mode="0644">cockpits/nav/navdata.xml</file>
       <file md5="a2591190c8cc190181cd70cfa96a0838" mode="0644">cockpits/turretrear-cockpit.cpt/crosshairs.spr</file>
       <file md5="ea7f9d991fd6e14f6bf73ffd9311776f" mode="0644">cockpits/turretrear-cockpit.cpt/centurion-cockpit-turret.png</file>
