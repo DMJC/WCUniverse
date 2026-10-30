@@ -77,6 +77,7 @@ from __future__ import division
 # XXX The docstring sucks.
 _pi = 3.1415926536
 _e = 2.7182818284590451
+import unit_truth  # makes null units false; see unit_truth.py
 from VS import log as _log, exp as _exp
 from VS import sqrt as _sqrt, acos as _acos, cos as _cos, sin as _sin
 
