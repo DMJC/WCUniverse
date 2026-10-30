@@ -6,9 +6,9 @@
         "missile_fire": { "type": "sine",     "strength": 0.55, "length_ms": 300, "period_ms": 60, "fade_ms": 200, "min_interval_ms": 200 },
         "beam":         { "type": "square",   "strength": 0.30, "length_ms": 0,   "period_ms": 200 },
         "afterburner":  { "type": "sine",     "strength": 0.25, "length_ms": 0,   "period_ms": 40, "attack_ms": 400 },
-        "shield_hit":   { "type": "constant", "strength": 0.40, "length_ms": 120, "fade_ms": 80,  "min_interval_ms": 80 },
-        "armor_hit":    { "type": "constant", "strength": 0.65, "length_ms": 180, "fade_ms": 100, "min_interval_ms": 80 },
-        "hull_hit":     { "type": "constant", "strength": 0.90, "length_ms": 250, "fade_ms": 120, "min_interval_ms": 80 }
+        "shield_hit":   { "type": "constant", "strength": 0.90, "length_ms": 120, "fade_ms": 80,  "min_interval_ms": 80 },
+        "armor_hit":    { "type": "constant", "strength": 0.95, "length_ms": 250, "fade_ms": 100, "min_interval_ms": 80 },
+        "hull_hit":     { "type": "constant", "strength": 0.90, "length_ms": 350, "fade_ms": 120, "min_interval_ms": 80 }
     },
     "weapons": {
         "Laser":          { "type": "square",        "strength": 0.5, "length_ms": 50,  "period_ms": 25, "fade_ms": 25 },
