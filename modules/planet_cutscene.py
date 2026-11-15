@@ -10,7 +10,9 @@ flown along a curve, banking into its turns:
             turns left across the front of the planet, ending centred in
             front of it, heading for the left of the screen.
 During the shot the player is parked out of sight behind the camera, frozen
-and invulnerable, and the HUD is hidden. Esc, Space or Enter skips to the
+and invulnerable, the HUD is hidden and the player's controls are locked
+out. The landing shot plays the landing music (land.m3u) and the takeoff
+shot the launch music (launch.m3u). Esc, Space or Enter skips to the
 end of the shot. Afterwards:
   landing - the player is docked at the planet (VS.completePlayerLanding),
             which opens the base screen;
@@ -37,6 +39,7 @@ the engine's gfx-overhaul branch.
 """
 import VS
 import math
+import dj_lib
 
 # Defaults; each can be overridden per shot with a keyword argument
 DEFAULTS = {
@@ -51,6 +54,8 @@ DEFAULTS = {
     "takeoff_end_speed": 60.0,    # takeoff: stand-in's speed (m/s) as it reaches the end
     "takeoff_speed": 200.0,  # takeoff: player's speed when control returns
     "max_bank": 35.0,        # degrees the stand-in may roll into a turn
+    "landing_music": "land.m3u",    # playlist for the landing shot; "" = leave the music alone
+    "takeoff_music": "launch.m3u",  # playlist for the takeoff shot; "" = leave the music alone
 }
 
 PATH_SAMPLES = 200      # samples per curve segment for the distance table
@@ -163,6 +168,27 @@ class Path:
     def direction(self, s):
         i, u = self.locate(s)
         return norm(bezier_tangent(self.segments[i], u))
+
+
+_playlists = {}
+
+
+def play_music(playlist):
+    """Plays a playlist (a .m3u name). Asking for the track that is already
+    playing does not restart it, so the base screen's own landing music and
+    the Launch button's launch music carry on seamlessly."""
+    if not playlist:
+        return
+    if playlist not in _playlists:
+        _playlists[playlist] = VS.musicAddList(playlist)
+    if _playlists[playlist] != -1:
+        VS.musicPlayList(_playlists[playlist])
+
+
+def resume_flight_music():
+    """Hands the music back to the DJ (after a landing that did not dock)."""
+    dj_lib.enable()
+    dj_lib.PlayMusik()
 
 
 def find_sun():
@@ -320,6 +346,12 @@ class PlanetCutscene:
 
     def start(self, player):
         player.SetInvulnerable(True)
+        if self.mode == "landing":
+            # As on arriving at a base: the DJ must not change the track
+            dj_lib.disable()
+            play_music(self.cfg["landing_music"])
+        else:
+            play_music(self.cfg["takeoff_music"])
 
         # The stand-in: same ship type and faction as the player, so nothing
         # treats it as hostile. Placed out of the way until the path is known
@@ -374,6 +406,7 @@ class PlanetCutscene:
                 self.state = "docking"
             else:
                 VS.cancelPlayerLanding()
+                resume_flight_music()
                 self.state = "done"
         else:
             # Hand control back exactly where the stand-in ended, flying on
@@ -397,6 +430,7 @@ class PlanetCutscene:
             log("could not dock at " + self.planet.getName())
             VS.clearCinematicCamera()
             VS.cancelPlayerLanding()
+            resume_flight_music()
             self.state = "done"
 
     def abort(self, player):
@@ -409,6 +443,8 @@ class PlanetCutscene:
                 player.SetInvulnerable(False)
         if self.mode == "landing":
             VS.cancelPlayerLanding()
+            if self.state in ("playing", "docking"):
+                resume_flight_music()
         self.state = "done"
 
     def Execute(self):
