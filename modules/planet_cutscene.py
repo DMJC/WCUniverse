@@ -10,7 +10,8 @@ flown along a curve, banking into its turns:
             turns left across the front of the planet, ending centred in
             front of it, heading for the left of the screen.
 During the shot the player is parked out of sight behind the camera, frozen
-and invulnerable, and the HUD is hidden. Afterwards:
+and invulnerable, and the HUD is hidden. Esc, Space or Enter skips to the
+end of the shot. Afterwards:
   landing - the player is docked at the planet (VS.completePlayerLanding),
             which opens the base screen;
   takeoff - control returns with the player exactly where the stand-in
@@ -436,6 +437,11 @@ class PlanetCutscene:
             return True
 
         # playing
+        if VS.takeCinematicSkip():
+            # Esc, Space or Enter: jump to the end of the shot (landing: dock,
+            # takeoff: hand control back where the stand-in would have ended)
+            self.finish(player)
+            return self.done()
         elapsed = now - self.start_time
         lead_in = self.cfg["lead_in"]
         flight_time = self.cfg["flight_time"]
