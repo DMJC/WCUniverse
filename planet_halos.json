@@ -1,0 +1,37 @@
+{
+    "_comment": [
+        "Atmospheric halos round planets.",
+        "A planet's type is its texture's name: file=\"planets/agricultural.png\" -> agricultural.",
+        "\"planets\" entries (by planet name, e.g. New_Detroit) win over \"types\"; a \"*\" type applies to every other planet.",
+        "An entry can be false for no halo. Fields left out come from \"defaults\":",
+        "  color      [r, g, b], 0..1",
+        "  thickness  atmosphere height, as a fraction of the planet's radius",
+        "  falloff    scale height of the air, as a fraction of the thickness (small: thin sharp rim, large: deep even haze)",
+        "  density    how opaque the air is (raise it for smog)",
+        "  night      brightness of the unlit side, 0..1"
+    ],
+    "enabled": true,
+    "defaults": {
+        "color": [0.35, 0.6, 1.0],
+        "thickness": 0.06,
+        "falloff": 0.3,
+        "density": 0.15,
+        "night": 0.04
+    },
+    "types": {
+        "agricultural": { "color": [0.35, 0.6, 1.0] },
+        "university": { "color": [0.35, 0.6, 1.0] },
+        "university_light": { "color": [0.35, 0.6, 1.0] },
+        "university_new": { "color": [0.35, 0.6, 1.0] },
+        "university_old": { "color": [0.35, 0.6, 1.0] },
+        "pleasure": { "color": [0.35, 0.6, 1.0] },
+        "church_of_man": { "color": [0.35, 0.6, 1.0] },
+
+        "industrial": { "color": [0.6, 0.57, 0.5], "thickness": 0.1, "falloff": 0.5, "density": 0.4, "night": 0.08 },
+        "industrial_light": { "color": [0.6, 0.57, 0.5], "thickness": 0.1, "falloff": 0.5, "density": 0.4, "night": 0.08 },
+        "industrial_old": { "color": [0.6, 0.57, 0.5], "thickness": 0.1, "falloff": 0.5, "density": 0.4, "night": 0.08 },
+        "industrial_light_old": { "color": [0.6, 0.57, 0.5], "thickness": 0.1, "falloff": 0.5, "density": 0.4, "night": 0.08 }
+    },
+    "planets": {
+    }
+}
