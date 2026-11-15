@@ -296,6 +296,8 @@
         "high_quality_sprites": true,
         "hud": {
             "already_near_message": "#010101Navpoint Near#010101",
+            "distance_display_scale": 6,
+            "distance_display_style": "short",
             "armor_hull_size": 0.4,
             "asteroids_near_message": "#010101Asteroids Near#010101",
             "basename_colon_basename": false,
