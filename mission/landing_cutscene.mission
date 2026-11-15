@@ -1,0 +1,99 @@
+<mission>
+	<!-- Sample cutscene: a ship landing on (or taking off from) a planet,
+	     played on demand a few seconds after the mission starts.
+
+	     The shot itself lives in modules/planet_cutscene.py (see there for
+	     what it does). In the campaign, modules/cutscene_director.py plays
+	     it automatically whenever the player lands on or launches from a
+	     planet; this mission is for previewing it.
+
+	     Settings are at the top of the python block. The python lives
+	     inside XML, so it must not use the less-than character (write
+	     "b > a" instead of "a < b").
+	     Run with:
+	       vegastrike-engine -D <data dir> mission/landing_cutscene.mission -->
+	<variables>
+		<var name="defaultplayer" value="blue"/>
+		<var name="mission_name" value="Landing Cutscene" />
+		<var name="difficulty" value=".5"/>
+		<var name="system" value="Gemini/Troy" />
+		<var name="description" value="Sample cinematic landing / takeoff shot." />
+	</variables>
+	<flightgroups>
+		<flightgroup name="blue" faction="privateer" type="orion" ainame="default" waves="1" nr_ships="1">
+			<pos x="2000" y="2000" z="0" />
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+	</flightgroups>
+	<python>
+import VS
+import Director
+import planet_cutscene
+
+# ---- settings ------------------------------------------------------------
+MODE = "landing"          # "landing" or "takeoff"
+PLANET_NAME = "Helen"     # "" = the nearest planet to the player
+START_DELAY = 3.0         # seconds of game time before the shot starts
+SHOT_SETTINGS = {}        # overrides for planet_cutscene.DEFAULTS, e.g.
+                          # {"flight_time": 10.0, "dock": False}
+# --------------------------------------------------------------------------
+
+
+def find_planet(player):
+    best = None
+    best_dist = 0
+    i = VS.getUnitList()
+    while not i.isDone():
+        un = i.current()
+        i.advance()
+        if un.isNull() or not un.isPlanet() or un.isJumppoint() or un.isSun():
+            continue
+        if PLANET_NAME and un.getName() != PLANET_NAME and un.getFullname() != PLANET_NAME:
+            continue
+        d = player.getDistance(un)
+        if best is None or best_dist > d:
+            best, best_dist = un, d
+    return best
+
+
+class landing_cutscene (Director.Mission):
+    def __init__ (self):
+        Director.Mission.__init__(self)
+        self.start_time = None
+        self.shot = None
+        self.finished = False
+        self.busy = False
+
+    def Execute (self):
+        # Docking opens the base screen, which runs mission scripts again
+        # from inside the dock call; ignore those nested calls
+        if self.busy or self.finished:
+            return
+        self.busy = True
+        try:
+            self.step()
+        finally:
+            self.busy = False
+
+    def step(self):
+        player = VS.getPlayer()
+        if player.isNull():
+            return
+        if self.shot is None:
+            now = VS.GetGameTime()
+            if self.start_time is None:
+                self.start_time = now
+            elif now - self.start_time >= START_DELAY:
+                planet = find_planet(player)
+                if planet is None:
+                    print("landing_cutscene: no planet found")
+                    self.finished = True
+                    return
+                self.shot = planet_cutscene.PlanetCutscene(planet, MODE, **SHOT_SETTINGS)
+            return
+        if self.shot.Execute():
+            self.finished = True
+
+landing_cutscene()
+	</python>
+</mission>

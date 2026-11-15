@@ -2,6 +2,7 @@ from trading import trading
 from random_encounters import random_encounters
 from difficulty import difficulty
 import dynamic_universe
+from cutscene_director import cutscene_director
 #from garbage_collect import garbage_collect
 import VS
 import Director
@@ -20,6 +21,7 @@ class privateer (Director.Mission):
               random_encounters (sigdis, detectiondis, gendis, minships,genships,fighterprob,enemyprob,capprob,capdist),
               trading (),
               dynamic_universe,
+              cutscene_director(),
               #garbage_collect (),
               hideProgress())
 
