@@ -1,7 +1,7 @@
 {
     "_comment": [
         "Atmospheric halos round planets.",
-        "A planet's type is its texture's name: file=\"planets/agricultural.png\" -> agricultural; jump points (jump.ani) are \"jump\".",
+        "A planet's type is its texture's name: file=\"planets/agricultural.png\" -> agricultural; jump points (jump.ani) are \"jump\", suns are \"star\" (a star's halo takes the star's own colour, tinted by color: white = exactly the star's).",
         "\"planets\" entries (by planet name, e.g. New_Detroit) win over \"types\"; a \"*\" type applies to every other planet.",
         "An entry can be false for no halo. Fields left out come from \"defaults\":",
         "  color      [r, g, b], 0..1",
@@ -33,7 +33,9 @@
         "industrial_old": { "color": [0.6, 0.57, 0.5], "thickness": 0.1, "falloff": 0.5, "density": 0.4, "night": 0.08 },
         "industrial_light_old": { "color": [0.6, 0.57, 0.5], "thickness": 0.1, "falloff": 0.5, "density": 0.4, "night": 0.08 },
 
-        "jump": { "color": [0.05, 0.12, 0.55], "thickness": 0.5, "falloff": 0.35, "density": 0.25, "night": 1.0, "glow": true }
+        "jump": { "color": [0.05, 0.12, 0.55], "thickness": 0.5, "falloff": 0.35, "density": 0.25, "night": 1.0, "glow": true },
+
+        "star": { "color": [1.0, 1.0, 1.0], "thickness": 9.0, "falloff": 0.3, "density": 0.06, "night": 1.0, "glow": true }
     },
     "planets": {
     }
