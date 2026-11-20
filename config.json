@@ -249,6 +249,7 @@
         "bases": {
             "alpha_test_cutoff": 0,
             "blur_bases": false,
+            "draw_location_text": false,
             "include_base_name_on_dock": false,
             "print_cargo_volume": false
         },
@@ -823,6 +824,12 @@
                 0.0,
                 0.0,
                 1.0
+            ],
+            "Base_Text_Color_Background": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
             ],
             "FixerTextColor_Background": [
                 0.0,
