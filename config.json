@@ -326,6 +326,7 @@
             "message_prefix": "COMMUNICATION\\n",
             "min_missile_bracket_size": 1.05,
             "nav_cross_line_thickness": 2,
+            "not_included_in_damage_report": "Fuel Capacitor FTL_Capacitor Drive FTL_Drive Cockpit Fire_Control Life_Support Hull Armor",
             "out_of_cone_distance": true,
             "planet_near_message": "#010101Planetary Hazard Near#010101",
             "print_damage_percent": false,
