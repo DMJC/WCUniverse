@@ -33,4 +33,5 @@
                     <CityLights file="planets/university_light.png" wrapx="1" wrapy="1"/>
 		<Atmosphere file="clouds.png" alpha="SRCALPHA INVSRCALPHA" radius="1211"/>
         </planet>
+        <planet name="Jump_To_Mastif" file="jump.ani" alpha="ONE ONE" radius="256" gravity="0" x="11000" y="-12000" z="7000" day="240" destination="Sol/Mastif"/>
 </system>

@@ -28,4 +28,5 @@
 
         <planet name="Jump_To_Regallis" file="jump.ani" alpha="ONE ONE" radius="256" gravity="0" x="-7000" y="-15500" day="240" destination="Gemini/Regallis" />
         <planet name="Jump_To_Pyrenees" file="jump.ani" alpha="ONE ONE" radius="256" gravity="0" x="12500" y="8500" day="240" destination="Gemini/Pyrenees"/>
+        <planet name="Jump_To_Agea" file="jump.ani" alpha="ONE ONE" radius="256" gravity="0" x="-13000" y="9000" z="6000" day="240" destination="Avalon/Agea"/>
 </system>

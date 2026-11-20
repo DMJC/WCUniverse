@@ -39,4 +39,5 @@
             <unit difficulty=".03" name= "Nav_2"  file="Asteroid_Field" faction="neutral"   x="11100" y="-2800" day="-14000"   ></unit>         
             <unit difficulty=".03" name= "Nav_4"  file="Asteroid_Field" faction="neutral"   x="-8200" y="0" day="-14000"   ></unit>     
         </Condition>
+        <planet name="Jump_To_Sumn_Lkor" file="jump.ani" alpha="ONE ONE" radius="256" gravity="0" x="-12000" y="12500" z="7000" day="240" destination="TrkPahn/SumnLkor"/>
 </system>

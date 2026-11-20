@@ -778,7 +778,7 @@
 		</sector>
 		<sector name="Gemini">
 			<system name="New_Caledonia">
-				<var name="planets" value="s"/>
+				<var name="planets" value="s s"/>
 				<var name="quadrant" value="Farris"/>
 				<var name="sun_radius" value="4200"/>
 				<var name="xyz" value="1351 720 287"/>
@@ -806,7 +806,7 @@
 				<var name="quadrant" value="Humboldt"/>
 				<var name="sun_radius" value="150000"/>
 				<var name="xyz" value="1240 1377 191"/>
-				<var name="jumps" value="Gemini/Regallis Gemini/Pyrenees"/>
+				<var name="jumps" value="Gemini/Regallis Gemini/Pyrenees Avalon/Agea"/>
 				<var name="fulljumps" value="Avalon/Agea Gemini/Regallis Gemini/Pyrenees"/>
 				<var name="faction" value="confed"/>
 			</system>
@@ -863,7 +863,7 @@
 				<var name="quadrant" value="Farris"/>
 				<var name="sun_radius" value="16600"/>
 				<var name="xyz" value="1558 731 362"/>
-				<var name="jumps" value="Gemini/Xytani"/>
+				<var name="jumps" value="Gemini/Xytani Gemini/Delta"/>
 				<var name="faction" value="militia"/>
 			</system>
 			<system name="Xytani">
@@ -895,7 +895,7 @@
 				<var name="quadrant" value="Humboldt"/>
 				<var name="sun_radius" value="85000"/>
 				<var name="xyz" value="1452 1675 420"/>
-				<var name="jumps" value="Gemini/J900 Gemini/Castor Gemini/Nexus Gemini/Penders_Star Gemini/119ce Gemini/New_Constantinople"/>
+				<var name="jumps" value="Gemini/J900 Gemini/Castor Gemini/Nexus Gemini/Penders_Star Gemini/119ce Gemini/New_Constantinople Gemini/Gemini"/>
 				<var name="fulljumps" value="Gemini/J900 Gemini/Castor Gemini/Nexus Gemini/Penders_Star Gemini/Gemini Gemini/119ce Gemini/New_Constantinople"/>
 				<var name="faction" value="militia"/>
 			</system>
@@ -913,7 +913,7 @@
 				<var name="sun_radius" value="50000"/>
 				<var name="xyz" value="1836 1149 270"/>
 				<var name="fulljumps" value="Gemini/Eden Gemini/New_Detroit Gemini/44-p-im Gemini/Midgard"/>
-				<var name="jumps" value="Gemini/New_Detroit Gemini/44-p-im Gemini/Midgard"/>
+				<var name="jumps" value="Gemini/New_Detroit Gemini/44-p-im Gemini/Midgard Gemini/Eden"/>
 				<var name="faction" value="confed"/>
 			</system>
 			<system name="XXN-1927">
@@ -929,7 +929,7 @@
 				<var name="quadrant" value="Clarke"/>
 				<var name="sun_radius" value="10000"/>
 				<var name="xyz" value="2309 699 420"/>
-				<var name="jumps" value="Gemini/Tr_Pakh Gemini/Hyades"/>
+				<var name="jumps" value="Gemini/Tr_Pakh Gemini/Hyades TrkPahn/SumnHhra"/>
 				<var name="kiljumps" value="Gemini/Tr_Pakh TrkPahn/SumnHhra Gemini/Hyades"/>
 				<var name="faction" value="kilrathi"/>
 			</system>
@@ -994,7 +994,7 @@
 				<var name="quadrant" value="Potter"/>
 				<var name="sun_radius" value="36500"/>
 				<var name="xyz" value="2253 1776 265"/>
-				<var name="jumps" value="Gemini/XXN-1927 Gemini/Shangri_La Gemini/Saxtogue"/>
+				<var name="jumps" value="Gemini/XXN-1927 Gemini/Shangri_La Gemini/Saxtogue Sol/Mastif"/>
 				<var name="fulljumps" value="Gemini/XXN-1927 Gemini/Shangri_La Gemini/Saxtogue Sol/Mastif"/>
 				<var name="faction" value="confed"/>
 			</system>
@@ -1019,7 +1019,7 @@
 				<var name="quadrant" value="Farris"/>
 				<var name="sun_radius" value="16600"/>
 				<var name="xyz" value="1227 1117 221"/>
-				<var name="jumps" value="Gemini/Junction Gemini/Telar"/>
+				<var name="jumps" value="Gemini/Junction Gemini/Telar Avalon/Haven"/>
 				<var name="fulljumps" value="Avalon/Haven Gemini/Junction Gemini/Telar"/>
 				<var name="faction" value="militia"/>
 			</system>
@@ -1045,7 +1045,7 @@
 				<var name="sun_radius" value="13600"/>
 				<var name="xyz" value="1782 1224 398"/>
 				<var name="jumps" value="Gemini/Nexus"/>
-				<var name="faction" value="militia"/>
+				<var name="faction" value="pirates"/>
 			</system>
 			<system name="Prasepe">
 				<var name="planets" value="s"/>
@@ -1077,7 +1077,7 @@
 				<var name="sun_radius" value="37000"/>
 				<var name="xyz" value="1669 956 439"/>
 				<var name="fulljumps" value="Gemini/Rikel"/>
-				<var name="jumps" value="Gemini/Valhalla"/>
+				<var name="jumps" value="Gemini/Valhalla Gemini/Rikel"/>
 				<var name="faction" value="retro"/>
 			</system>
 			<system name="Midgard">
@@ -1097,7 +1097,7 @@
 				<var name="faction" value="merchant"/>
 			</system>
 			<system name="Telar">
-				<var name="planets" value=""/>
+				<var name="planets" value="s"/>
 				<var name="quadrant" value="Farris"/>
 				<var name="sun_radius" value="16600"/>
 				<var name="xyz" value="1220 925 347"/>
@@ -1117,7 +1117,7 @@
 				<var name="quadrant" value="Clarke"/>
 				<var name="sun_radius" value="4200"/>
 				<var name="xyz" value="2241 892 338"/>
-				<var name="jumps" value="Gemini/Mah_Rahn Gemini/Nitir Gemini/Lisacc"/>
+				<var name="jumps" value="Gemini/Mah_Rahn Gemini/Nitir Gemini/Lisacc TrkPahn/SumnLkor"/>
 				<var name="fulljumps" value="Gemini/Mah_Rahn Gemini/Nitir TrkPahn/SumnLkor Gemini/Lisacc"/>
 				<var name="faction" value="confed"/>
 			</system>
@@ -1142,7 +1142,7 @@
 				<var name="quadrant" value="Humboldt"/>
 				<var name="sun_radius" value="75000"/>
 				<var name="xyz" value="1267 1514 224"/>
-				<var name="jumps" value="Gemini/Freyja Gemini/Troy Gemini/CM-N1054"/>
+				<var name="jumps" value="Gemini/Freyja Gemini/Troy Gemini/CM-N1054 Avalon/Callisto"/>
 				<var name="fulljumps" value="Avalon/Callisto Gemini/Freyja Gemini/Troy Gemini/CM-N1054"/>
 				<var name="faction" value="militia"/>
 			</system>
@@ -1167,12 +1167,12 @@
 				<var name="quadrant" value="Clarke"/>
 				<var name="sun_radius" value="3000.0"/>
 				<var name="xyz" value="2313 1092 358"/>
-				<var name="jumps" value="Gemini/Blockade_Point_Tango"/>
+				<var name="jumps" value="Gemini/Blockade_Point_Tango TrkPahn/TKTarak TrkPahn/NDerPak"/>
 				<var name="alljumps" value="TrkPahn/TKTarak TrkPahn/NDerPak Gemini/Blockade_Point_Tango"/>
-				<var name="faction" value="kilrathi"/>
+				<var name="faction" value="confed"/>
 			</system>
 			<system name="DN-N1912">
-				<var name="planets" value="bd"/>
+				<var name="planets" value="t"/>
 				<var name="quadrant" value="Potter"/>
 				<var name="sun_radius" value="1875.0"/>
 				<var name="xyz" value="2322 1626 242"/>
@@ -1185,7 +1185,7 @@
 				<var name="sun_radius" value="2625.0"/>
 				<var name="xyz" value="1683 1646 300"/>
 				<var name="fulljumps" value="Gemini/Junction Gemini/Padre Gemini/Pentonville Gemini/XXN-1927"/>
-				<var name="jumps" value="Gemini/Junction Gemini/Padre Gemini/XXN-1927"/>
+				<var name="jumps" value="Gemini/Junction Gemini/Padre Gemini/XXN-1927 Gemini/Pentonville"/>
 				<var name="faction" value="militia"/>
 			</system>
 			<system name="Pentonville">
@@ -1205,7 +1205,7 @@
 				<var name="faction" value="kilrathi"/>
 			</system>
 			<system name="Saxtogue">
-				<var name="planets" value="bd"/>
+				<var name="planets" value="t"/>
 				<var name="quadrant" value="Potter"/>
 				<var name="sun_radius" value="14250"/>
 				<var name="xyz" value="2280 1530 179"/>
@@ -1213,7 +1213,7 @@
 				<var name="faction" value="confed"/>
 			</system>
 			<system name="Auriga">
-				<var name="planets" value="bd"/>
+				<var name="planets" value="s bd"/>
 				<var name="quadrant" value="Potter"/>
 				<var name="sun_radius" value="37000"/>
 				<var name="xyz" value="2210 1573 339"/>
@@ -1245,13 +1245,13 @@
 				<var name="faction" value="confed"/>
 			</system>
 			<system name="Aldebran">
-				<var name="planets" value="bd"/>
+				<var name="planets" value="t"/>
 				<var name="quadrant" value="Potter"/>
 				<var name="sun_radius" value="13600"/>
 				<var name="xyz" value="1833 1774 468"/>
 				<var name="emptyjumps" value="Gemini/New_Constantinople Gemini/Hinds_Variable_N"/>
 				<var name="fulljumps" value="Gemini/New_Constantinople Gemini/Hinds_Variable_N Sol/Camelot"/>
-				<var name="jumps" value="Gemini/New_Constantinople Gemini/Hinds_Variable_N"/>
+				<var name="jumps" value="Gemini/New_Constantinople Gemini/Hinds_Variable_N Sol/Camelot"/>
 				<var name="faction" value="confed"/>
 			</system>
 			<system name="Mah_Rahn">
@@ -1259,7 +1259,7 @@
 				<var name="quadrant" value="Clarke"/>
 				<var name="sun_radius" value="16600"/>
 				<var name="xyz" value="2323 782 345"/>
-				<var name="jumps" value="Gemini/Blockade_Point_Tango"/>
+				<var name="jumps" value="Gemini/Blockade_Point_Tango TrkPahn/SumTlor"/>
 				<var name="alljumps" value="TrkPahn/SumTlor Gemini/Blockade_Point_Tango"/>
 				<var name="faction" value="kilrathi"/>
 			</system>
@@ -1292,7 +1292,7 @@
 				<var name="quadrant" value="Humboldt"/>
 				<var name="sun_radius" value="7500"/>
 				<var name="xyz" value="1455 1417 292"/>
-				<var name="jumps" value="Gemini/Regallis Gemini/Pyrenees Gemini/War Gemini/Penders_Star"/>
+				<var name="jumps" value="Gemini/Regallis Gemini/Pyrenees Gemini/War Gemini/Penders_Star Gemini/Gemini"/>
 				<var name="fulljumps" value="Gemini/Regallis Gemini/Pyrenees Gemini/War Gemini/Gemini Gemini/Penders_Star"/>
 				<var name="faction" value="merchant"/>
 			</system>
@@ -1329,11 +1329,11 @@
 				<var name="faction" value="confed"/>
 			</system>
 			<system name="Tr_Pakh">
-				<var name="planets" value=""/>
+				<var name="planets" value="s"/>
 				<var name="quadrant" value="Clarke"/>
 				<var name="sun_radius" value="2250.0"/>
 				<var name="xyz" value="2241 639 205"/>
-				<var name="jumps" value="Gemini/Blockade_Point_Alpha Gemini/Sumn_Kpta"/>
+				<var name="jumps" value="Gemini/Blockade_Point_Alpha Gemini/Sumn_Kpta TrkPahn/SumTlor"/>
 				<var name="alljumps" value="Gemini/Blockade_Point_Alpha Gemini/Sumn_Kpta TrkPahn/SumTlor"/>
 				<var name="faction" value="kilrathi"/>
 			</system>
@@ -1343,7 +1343,7 @@
 				<var name="sun_radius" value="16600"/>
 				<var name="xyz" value="1445 1054 284"/>
 				<var name="fulljumps" value="Gemini/Telar Gemini/Eden"/>
-				<var name="jumps" value="Gemini/Telar"/>
+				<var name="jumps" value="Gemini/Telar Gemini/Eden"/>
 				<var name="faction" value="merchant"/>
 			</system>
 			<system name="Blockade_Point_Alpha">

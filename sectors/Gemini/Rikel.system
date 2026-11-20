@@ -48,4 +48,5 @@
             <unit difficulty=".03"   name= "Jump_To_44-P-IM"  file="Asteroid_Field" faction="neutral"   x="8000" y="-10500" day="-14000"  ></unit>         
             <unit difficulty=".03" name=""  file="Asteroid_Field" faction="neutral"   x="-1500" y="-12500" day="-14000"  ></unit>         
         </Condition>
+        <planet name="Jump_To_Eden" file="jump.ani" alpha="ONE ONE" radius="256" gravity="0" x="16000" y="3000" z="0" day="240" destination="Gemini/Eden"/>
 </system>

@@ -42,4 +42,5 @@
         <Condition expression="asteroid_detail &gt;= 1">
             <asteroid VarName="asteroid_detail" VarValue="1"  name= "Basque"  file="AFieldBasePriv" faction="neutral"   x="-12000" day="-14000"   ></asteroid>         
         </Condition>
+        <planet name="Jump_To_Callisto" file="jump.ani" alpha="ONE ONE" radius="256" gravity="0" x="14500" y="-6000" z="6000" day="240" destination="Avalon/Callisto"/>
 </system>
