@@ -882,7 +882,7 @@ def contractMissionsFor(fac,baseship,minsysaway,maxsysaway):
 
                     playership=VS.getPlayer().getName()
                     try:
-                        hold=int(VS.LookupUnitStat(playership,"privateer","Hold_Volume"))
+                        hold=int(float(VS.LookupUnitStat(playership,"privateer","Hold_Volume") or 0))
                     except:
                         hold=10;
                     if hold==0:
