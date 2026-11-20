@@ -54,7 +54,7 @@ class GUIRoot:
 		trace(TRACE_WARNING, "::: Engine Version {0} :::".format(engineVersion))
 		trace(TRACE_WARNING, "::: Asset API Version {0} :::".format(apiVersion))
 
-		Base.GlobalKeyPython('#\nfrom GUI import GUIRoot\nGUIRootSingleton.keyEvent()\n')
+		Base.GlobalKeyPython('#\nimport GUI\nGUI.GUIRootSingleton.keyEvent()\n')
 
 	def setScreenDimensions(self,screenX,screenY):
 		self.screenX=screenX
@@ -98,11 +98,17 @@ class GUIRoot:
 
 	def keyEvent(self):
 		eventdata = Base.GetEventData();
-		if self.keyTarget is not None:
-			if eventdata['type'] == 'keyup' and 'keyUp' in dir(self.keyTarget):
-				self.keyTarget.keyUp(eventdata['key'])
-			if eventdata['type'] == 'keydown' and 'keyDown' in dir(self.keyTarget):
-				self.keyTarget.keyDown(eventdata['key'])
+		target = self.keyTarget
+		if target is None:
+			# No focused element: fall back to the key handler of the room
+			# currently on screen, if it registered one (see GUIRoom.keyHandler).
+			room = self.rooms.get(Base.GetCurRoom(), None)
+			target = getattr(room, 'keyHandler', None)
+		if target is not None:
+			if eventdata['type'] == 'keyup' and 'keyUp' in dir(target):
+				target.keyUp(eventdata['key'])
+			if eventdata['type'] == 'keydown' and 'keyDown' in dir(target):
+				target.keyDown(eventdata['key'])
 
 	def registerRoom(self,room):
 		self.rooms[room.getIndex()] = room
@@ -337,6 +343,9 @@ class GUIRoom:
 		self.needPreserveZ = 0
 		self.screenDimensions = None
 		self.screenMargins = None
+		# object with keyDown/keyUp methods that gets key events while this
+		# room is on screen and no element has keyboard focus
+		self.keyHandler = None
 		# add this GUIRoom to GUIRootSingleton
 		GUIRootSingleton.registerRoom(self)
 		

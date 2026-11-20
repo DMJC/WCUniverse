@@ -19,6 +19,15 @@ savefilters = set(["test2_main_menu","New_Game"])
 
 class NewSaveGame: pass
 
+import sys
+# Engine keycodes (see WSK_DELETE in the engine's winsys.h): on macOS the
+# key labelled "delete" sends 8, everywhere else the Delete key sends 127.
+if sys.platform == 'darwin':
+    DELETE_KEYS = (127, 8)
+else:
+    DELETE_KEYS = (127,)
+YES_KEYS = (ord('y'), ord('Y'))
+
 def time_sorted_listdir(dir):
     import os
     def time_key(filename):
@@ -79,6 +88,8 @@ class QuineComputer:
 
         # when a button is clicked, this will allow us to get the QuineComputer instance from the x_click functions
         guiroom.owner = self
+        # receive keyboard events (Delete key on the load/save lists)
+        guiroom.keyHandler = self
 
         # add background sprite; no need to keep a variable around for this, as it doesn't change
         GUI.GUIStaticImage(guiroom, 'background', ( 'interfaces/quine/main.spr' , GUI.GUIRect(0, 0, 1, 1, "normalized") )).draw()
@@ -86,6 +97,8 @@ class QuineComputer:
         # add buttons
         self.buttons = {}
         self.mode = ''
+        # savegame name awaiting a Y/N delete confirmation, or None
+        self.pending_delete = None
 
         if enable_finances:
             hot_loc = GUI.GUIRect(545, 287, 105, 60, "pixel", (800,600))
@@ -196,9 +209,77 @@ class QuineComputer:
 
     def reset(self):
         trace(TRACE_DEBUG,"::: QuineComputer.reset()")
+        self.pending_delete = None
         self.txt_screen.setText( self.str_start )
 
+    def refresh_savelist(self):
+        if self.mode == 'btn_save':
+            self.picker_screen.items = [GUI.GUISimpleListPicker.listitem("New Game",NewSaveGame)]+savelist()
+        else:
+            self.picker_screen.items = savelist()
+        self.picker_screen.firstVisible = 0
+        self.picker_screen.setSelection(None)
+
+    def show_savelist(self):
+        self.txt_screen.hide()
+        self.picker_screen.show()
+
+    def keyDown(self, key):
+        if self.pending_delete is not None:
+            # Y confirms; N or any other key cancels
+            game = self.pending_delete
+            self.pending_delete = None
+            if key in YES_KEYS:
+                self.delete_savegame(game)
+            self.show_savelist()
+        elif key in DELETE_KEYS:
+            self.request_delete()
+        else:
+            return
+        self.guiroom.notifyNeedRedraw()
+        self.guiroom.redrawIfNeeded()
+
+    def keyUp(self, key):
+        pass
+
+    def request_delete(self):
+        if self.mode not in ('btn_load', 'btn_save') or not self.picker_screen.visible:
+            return
+        selection = self.picker_screen.selection
+        if selection is None or selection >= len(self.picker_screen.items):
+            return
+        game = self.picker_screen.items[selection].data
+        if game is NewSaveGame:
+            return
+        self.pending_delete = game
+        self.picker_screen.hide()
+        self.txt_screen.setText(
+                "\n"*7+
+                "Are you sure you want to delete the savegame?\n(%s)"% game
+                +"\n"*3
+                +"Press Y to delete, N to cancel." )
+        self.txt_screen.show()
+
+    def delete_savegame(self, game):
+        import os
+        if not game or os.path.basename(game) != game or game in savefilters:
+            return
+        path = os.path.join(VS.getSaveDir(), game)
+        try:
+            os.remove(path)
+            trace(TRACE_DEBUG, "::: QuineComputer deleted savegame %s" % path)
+        except OSError as e:
+            print("Could not delete savegame %s: %s" % (path, e))
+        self.refresh_savelist()
+
     def change_text(self, button_index):
+        if self.pending_delete is not None:
+            # clicking anything while the delete prompt is up cancels it;
+            # clicking the current mode's button just returns to the list
+            self.pending_delete = None
+            self.show_savelist()
+            if button_index == self.mode:
+                return
         text_screens = {
                 'btn_finances' : lambda:get_relations_text(VS.getPlayer()),
                 'btn_manifest' : lambda:get_manifest_text(VS.getPlayer()),
