@@ -263,10 +263,23 @@ def textline(strs):
     return "#00ff00"+str(strs)
 
 #depends on Base
-def displayText(room,textlist,enqueue=False):
+def displayText(room,textlist,enqueue=False,after=None):
+    """Shows campaign text. If a talking head is up, a conversation (a list
+    of (speaker, text[, sound]) entries) is played a line at a time, switching
+    the head to whoever is speaking; after() is then called when it ends.
+    Otherwise the text is shown at once and after() is called straight away."""
     #debug.warn("Displaying campaign text "+str(textlist))
     if VS.isserver():
         return
+    if not enqueue and _canPlayConversation(textlist):
+        _startConversation(textlist,after)
+        return
+    _stopConversation()
+    _displayTextNow(room,textlist,enqueue)
+    if after:
+        after()
+
+def _displayTextNow(room,textlist,enqueue=False):
     if room==-1:
         debug.error("Room is -1!!!")
     import Base
@@ -292,6 +305,218 @@ def displayText(room,textlist,enqueue=False):
                 func(room,stri);
             #    debug.debug('*** Base.enqueuEmessage('+str(x)+')')
             #    Base.EnqueueMessageToRoom(room,str(x))
+
+#
+# Talking head conversations
+#
+# A conversation is a list of (speaker, text[, sound]) entries. Its single
+# sound file holds the whole exchange, every speaker, so each line is given a
+# share of the sound's length in proportion to its length, and the head is
+# switched to the speaker at the start of the line.
+#
+TALKING_HEAD = 'Talking'                      # name of the head sprite and link
+TALKING_BACKING = 'Talking_backing'           # opaque backing for heads with a transparent background
+CONVERSATION_TIMER = 'conversation_timer'
+PLAYER_SPEAKERS = ('Burrows',)                # speaker names that are the player
+PLAYER_HEAD = 'bases/heads/burrows.spr'
+PLAYER_HEAD_BACKING = 'black.spr'             # drawn behind the player's head; '' for none
+LINE_PAUSE_CHARS = 20     # allowance (in characters) for the pause at each line
+SECONDS_PER_CHAR = 0.065  # timing when there is no sound file (about 15 characters a second)
+MIN_LINE_SECONDS = 2.0
+
+_head = None              # {'room', 'fixer', 'pos', 'current'} while a talking head is up
+_conversation = None      # the conversation being played
+_conversation_id = 0
+
+def _setConversationHead(room,sprite,pos):
+    global _head
+    _stopConversation()
+    _head = {'room':room, 'fixer':sprite, 'pos':pos, 'current':sprite}
+
+def resetConversation():
+    """Forgets any head and conversation: a new base screen has none."""
+    global _head,_conversation
+    _head = None
+    _conversation = None
+
+def _speakerOf(entry):
+    if (type(entry) is list or type(entry) is tuple) and len(entry)>1:
+        return str(entry[0])
+    return None
+
+def _soundOf(entry):
+    if (type(entry) is list or type(entry) is tuple) and len(entry)>1:
+        if len(entry)>2:
+            return entry[2]
+        if str(entry[1])[-4:]=='.wav':
+            return entry[1]
+    return None
+
+def _formatLine(entry):
+    """As textline(), without playing the line's sound."""
+    if _speakerOf(entry) is not None and _soundOf(entry)!=entry[1]:
+        return getcolor(str(entry[0]))+str(entry[0])+": #000000"+str(entry[1])
+    if type(entry) is list or type(entry) is tuple:
+        return str(entry[0])
+    return "#00ff00"+str(entry)
+
+def _canPlayConversation(textlist):
+    if _head is None or not doTalkingHeads():
+        return False
+    if type(textlist) is not list and type(textlist) is not tuple:
+        return False
+    if not len(textlist):
+        return False
+    for entry in textlist:
+        if _speakerOf(entry) is None:
+            return False
+    return True
+
+def _findSoundFile(sound):
+    import os
+    datadir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    for path in (os.path.join(datadir,'sounds',sound), os.path.join(datadir,sound),
+                 os.path.join('sounds',sound), sound):
+        if os.path.isfile(path):
+            return path
+    return None
+
+def soundLength(sound):
+    """Length in seconds of a sound file (Ogg Vorbis or WAV), or None."""
+    path = _findSoundFile(sound)
+    if not path:
+        return None
+    try:
+        f = open(path,'rb')
+        try:
+            data = f.read(4096)
+            if data[:4]==b'RIFF':
+                import wave
+                w = wave.open(path)
+                return w.getnframes()/float(w.getframerate())
+            if data[:4]!=b'OggS':
+                return None
+            # Sample rate from the Vorbis identification header, length from
+            # the granule position (sample count) of the last page
+            ident = data.find(b'\x01vorbis')
+            if ident<0:
+                return None
+            import struct
+            rate = struct.unpack('<I',data[ident+12:ident+16])[0]
+            f.seek(0,2)
+            size = f.tell()
+            f.seek(max(0,size-65536))
+            tail = f.read()
+            last = tail.rfind(b'OggS')
+            if last<0 or rate<=0:
+                return None
+            granule = struct.unpack('<q',tail[last+6:last+14])[0]
+            return granule/float(rate)
+        finally:
+            f.close()
+    except Exception as e:
+        debug.debug('could not read the length of '+str(sound)+': '+str(e))
+        return None
+
+def _lineTimes(textlist,sound):
+    weights = [len(str(entry[1]))+LINE_PAUSE_CHARS for entry in textlist]
+    length = soundLength(sound) if sound else None
+    if length:
+        total = float(sum(weights))
+        return [length*w/total for w in weights]
+    return [max(MIN_LINE_SECONDS,w*SECONDS_PER_CHAR) for w in weights]
+
+def _showHead(sprite):
+    import Base
+    if _head['current']==sprite:
+        return
+    room = _head['room']
+    x,y = _head['pos']
+    Base.EraseObj(room,TALKING_BACKING)
+    Base.EraseObj(room,TALKING_HEAD)
+    if sprite==PLAYER_HEAD and PLAYER_HEAD_BACKING:
+        Base.Texture(room,TALKING_BACKING,PLAYER_HEAD_BACKING,0,0)
+    Base.Texture(room,TALKING_HEAD,sprite,x,y)
+    _head['current'] = sprite
+
+def _headFor(speaker):
+    if speaker in PLAYER_SPEAKERS:
+        return PLAYER_HEAD
+    return _head['fixer']
+
+def _startConversation(textlist,after):
+    global _conversation,_conversation_id
+    _stopConversation()
+    sound = None
+    for entry in textlist:
+        sound = _soundOf(entry)
+        if sound:
+            break
+    _conversation_id += 1
+    _conversation = {'id':_conversation_id, 'lines':list(textlist),
+                     'times':_lineTimes(textlist,sound), 'index':-1, 'after':after}
+    VS.StopAllSounds()
+    if sound:
+        debug.debug("playing sound "+str(sound))
+        VS.playSound(sound,(0.,0.,0.),(0.,0.,0.))
+    _nextLine()
+
+def _nextLine():
+    global _conversation
+    import Base
+    conv = _conversation
+    room = _head['room']
+    Base.EraseObj(room,CONVERSATION_TIMER)
+    conv['index'] += 1
+    i = conv['index']
+    if i>=len(conv['lines']):
+        # Done: the last line stays up until it times out
+        _conversation = None
+        if conv['after']:
+            conv['after']()
+        return
+    entry = conv['lines'][i]
+    _showHead(_headFor(_speakerOf(entry)))
+    Base.MessageToRoom(room,_formatLine(entry))
+    Base.RunScript(room,CONVERSATION_TIMER,
+        "#\nimport campaign_lib\ncampaign_lib.conversationTick(%d)\n"%conv['id'],conv['times'][i])
+
+def conversationTick(conversation_id):
+    """Run by the line timer: moves on to the next line."""
+    import Base
+    if _conversation is None or _conversation['id']!=conversation_id or _head is None:
+        Base.EraseObj(Base.GetCurRoom(),CONVERSATION_TIMER)
+        return
+    _nextLine()
+
+def _stopConversation():
+    """Stops a conversation part way; returns its after() callback, if any."""
+    global _conversation
+    conv = _conversation
+    _conversation = None
+    if conv is None:
+        return None
+    if _head is not None:
+        import Base
+        Base.EraseObj(_head['room'],CONVERSATION_TIMER)
+    return conv['after']
+
+def endConversation():
+    """Clicking the talking head: removes it, and stops the conversation, its
+    sound and text. Choices that were waiting on the conversation appear."""
+    global _head
+    import Base
+    after = _stopConversation()
+    room = _head['room'] if _head is not None else Base.GetCurRoom()
+    _head = None
+    Base.EraseLink(room,TALKING_HEAD)
+    Base.EraseObj(room,TALKING_HEAD)
+    Base.EraseObj(room,TALKING_BACKING)
+    Base.EraseObj(room,CONVERSATION_TIMER)
+    VS.StopAllSounds()
+    Base.Message('')
+    if after:
+        after()
 
 class Script:
     def __init__(self,nextscript=None):
@@ -749,9 +974,22 @@ def AddRemovingSprite(name,sprite,center_position,widthheight,text,nextscript=No
     return AddPythonSprite(name,sprite,center_position,
         widthheight,text,"#\nimport Base\nBase.EraseLink(Base.GetCurRoom(), "+repr(name)+")\nBase.EraseObj(Base.GetCurRoom(), "+repr(name)+")\n",nextscript)
 
+class ConversationHead(AddPythonSprite):
+    """The full screen talking head shown while talking to a fixer. Clicking
+    it ends the conversation (see endConversation). While it is up, campaign
+    conversations switch it between the fixer's head and the player's head
+    depending on who is speaking."""
+    def __init__(self,name,sprite,center_position,widthheight,text,nextscript=None):
+        AddPythonSprite.__init__(self,name,sprite,center_position,widthheight,text,
+            "#\nimport campaign_lib\ncampaign_lib.endConversation()\n",nextscript)
+    def __call__(self,room,subnodes):
+        AddPythonSprite.__call__(self,room,subnodes)
+        if not VS.isserver() and self.name==TALKING_HEAD:
+            _setConversationHead(room,self.sprite,self.pos)
+        return True
+
 def AddConversationStoppingSprite(name,sprite,center_position,widthheight,text,nextscript=None):
-    return AddPythonSprite(name,sprite,center_position,
-        widthheight,text,"#\nimport Base\nBase.EraseLink(Base.GetCurRoom(), "+repr(name)+")\nBase.EraseObj(Base.GetCurRoom(), "+repr(name)+")\nimport VS\nVS.StopAllSounds()\nBase.Message('')\n",nextscript)
+    return ConversationHead(name,sprite,center_position,widthheight,text,nextscript)
 config_talking_heads=VS.vsConfig("graphics","talking_heads","true")
 def doTalkingHeads():
     talk= (config_talking_heads=="true" or config_talking_heads=="1")            
@@ -1180,14 +1418,17 @@ class CampaignChoiceNode(CampaignNode):
             return
         debug.debug('***')
         debug.debug(self.text)
-        displayText(room,self.text)
         import fixers
         arr=[]
         debug.debug('*** create buttons +'+str(self.choices))
         for x in range(len(self.choices)):
             arr.append(fixers.Choice(self.choices[x][0],"#\nimport campaign_lib\ncampaign_lib.clickChoice("+str(room)+","+str(x)+")\n",self.choices[x][1]))
         fixers.DestroyActiveButtons()
-        fixers.CreateChoiceButtons(room,arr)
+        def make_buttons():
+            # Once the conversation has been spoken (or skipped)
+            fixers.DestroyActiveButtons()
+            fixers.CreateChoiceButtons(room,arr)
+        displayText(room,self.text,after=make_buttons)
         debug.debug('***')
     
 def CampaignEndNode(campaign):
@@ -1538,6 +1779,7 @@ def handle_queued_cmds(room):
 
 def getFixersToDisplay(room):
     debug.debug('*** Get the fixers to display!!!')
+    resetConversation()
     handle_queued_cmds(room)
     
     global fixerloaded
