@@ -53,6 +53,8 @@ DEFAULTS = {
     "takeoff_end_distance": 6.0,  # takeoff: final distance from the camera, in ship radii
     "takeoff_end_speed": 60.0,    # takeoff: stand-in's speed (m/s) as it reaches the end
     "takeoff_speed": 200.0,  # takeoff: player's speed when control returns
+    "takeoff_start": 0.5,    # takeoff: fraction of flight_time already played when
+                             # the shot opens (0 = from the start; skips the lead-in)
     "max_bank": 35.0,        # degrees the stand-in may roll into a turn
     "landing_music": "land.m3u",    # playlist for the landing shot; "" = leave the music alone
     "takeoff_music": "launch.m3u",  # playlist for the takeoff shot; "" = leave the music alone
@@ -369,14 +371,25 @@ class PlanetCutscene:
 
         self.setup_shot(player, ship_radius)
         self.park_player(player)
+
+        # A takeoff can open part way through the flight: the shot clock is
+        # started that far back, so the stand-in is already moving at the
+        # speed it would have had there
+        offset = 0.0
+        t0 = 0.0
+        if self.mode == "takeoff":
+            t0 = max(0.0, min(0.95, self.cfg["takeoff_start"]))
+            if t0 > 0.0:
+                offset = self.cfg["lead_in"] + t0 * self.cfg["flight_time"]
+
         if not self.actor.isNull():
-            pos, up, forward, speed = self.pose(0.0)
+            pos, up, forward, speed = self.pose(t0)
             self.actor.SetPosAndCumPos(pos)
             self.actor.SetOrientation(up, forward)
-            self.drive_actor(0.0)
+            self.drive_actor(t0)
 
         self.aim_camera()
-        self.start_time = VS.GetGameTime()
+        self.start_time = VS.GetGameTime() - offset
         self.state = "playing"
 
     def remove_actor(self):
